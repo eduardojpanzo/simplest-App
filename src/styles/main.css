@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --blue-500: blue;
+
+  --blueviolet-500: blueviolet;
+}
+
+.mainHome .container {
+  width: 525px;
+  padding: 10px;
+  margin: 40px auto 0;
+}
+
+.mainHome h1 {
+  margin-bottom: 1.75rem;
+  text-align: center;
+  color: var(--blueviolet-500);
+}
+
+.mainHome .hashtag {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  border: 1px solid rgba(187, 187, 187, 0.432);
+  border-radius: 1rem;
+  text-align: center;
+}
+.mainHome .hashtag a {
+  display: block;
+  width: 50%;
+  padding: 1.6rem 0;
+  color: var(--blue-500);
+  font-size: 1.2rem;
+  font-weight: bolder;
+  text-decoration: none;
+}

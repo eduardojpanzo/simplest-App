@@ -1,7 +1,11 @@
-# Simple Aplication JavaScript
+# Simplest Aplications
 
-- Um aplicação que contem diversas mini aplicações ou ações que são possivel fazer com javaScript
+-Diversas mini aplicações ou ações que são possivel fazer com javaScript
 
-# generatePassword
+## generatePassword
 
 App, que a partir de uma seleção gera uma password e pode se copiada
+
+## SearchBarFilter
+
+filtrar productos através de uma barra de pesquisa, a cada dígito

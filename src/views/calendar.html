@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendar</title>
+    <link rel="stylesheet" href="../styles/calendar.css" />
+  </head>
+  <body>
+    <main class="calendar">
+      <div class="header">
+        <span class="month" id="month"></span>
+
+        <div class="year">
+          <span class="change" id="prev">&lt;</span>
+          <span id="year"></span>
+          <span class="change" id="next">&gt;</span>
+        </div>
+      </div>
+
+      <div class="body">
+        <div class="weekdays"></div>
+        <div class="days"></div>
+      </div>
+
+      <div class="footer">
+        <div class="toggle lang">
+          <span>Pt</span>
+          <div class="switch">
+            <div class="switch-indent"></div>
+          </div>
+          <span>En</span>
+        </div>
+
+        <div class="toggle theme">
+          <span>Dark Mode</span>
+          <div class="switch">
+            <div class="switch-indent"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="months"></div>
+    </main>
+
+    <script src="../js/calendar.js"></script>
+  </body>
+</html>

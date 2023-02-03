@@ -1,31 +1,62 @@
+const formElement = document.querySelector("#form");
 const slider = document.querySelector("#slider");
-const button = document.querySelector("#button");
-const sizePassword = document.querySelector("#valor");
-const password = document.querySelector("#password");
-const containerPassword = document.querySelector("#container-password");
+const lenghtElement = document.querySelector("#lenght");
+const containerHashElement = document.querySelector("#container-hash");
+const hashElement = document.querySelector("#hash");
+const tooltipElement = document.querySelector("#container-hash .tooltip");
 
-let charset = "abcdefghijklmnopqrstuvxwyzABCDEFGHIJKLMNOPQRSTUVXYZ1234567890";
-let novaSenha = "";
+const symbols = "@#£$§%&/{([)]=}??'+*\\|~^º\"";
+const numbers = "0123456789";
+const letters = "abcdefghijklmnopqrstuvxwyzABCDEFGHIJKLMNOPQRSTUVXYZ";
 
-function generatePassword() {
-  let pass = "";
+let hash = "";
+
+function generateHash(charset) {
+  hash = "";
   for (let i = 0, n = charset.length; i < slider.value; i++) {
-    pass += charset.charAt(Math.floor(Math.random() * n));
+    hash += charset.charAt(Math.floor(Math.random() * n));
   }
 
-  containerPassword.classList.remove("hide");
-  password.innerHTML = pass;
-  novaSenha = pass;
+  containerHashElement.classList.remove("hide");
+  hashElement.innerHTML = hash;
 }
 
-function copyPassword() {
-  navigator.clipboard.writeText(novaSenha);
+function copyHash() {
+  navigator.clipboard.writeText(hash);
+
+  setTimeout(() => {
+    tooltipElement.style.opacity = 1;
+    tooltipElement.style.visibility = "visible";
+  }, 100);
+
+  setTimeout(() => {
+    tooltipElement.style.opacity = 0;
+    tooltipElement.style.visibility = "hidden";
+  }, 2000);
 }
 
-sizePassword.innerHTML = slider.value;
+lenghtElement.innerHTML = slider.value;
 
 slider.addEventListener("change", ({ target }) => {
-  sizePassword.innerHTML = target.value;
+  lenghtElement.innerHTML = target.value;
 });
-button.addEventListener("click", generatePassword);
-password.addEventListener("click", copyPassword);
+
+formElement.addEventListener("submit", (e) => {
+  e.preventDefault();
+  let charset = "";
+
+  const [, boxLetters, boxNumbers, boxSymbols] = e.target.elements;
+
+  if (!boxLetters.checked & !boxNumbers.checked & !boxSymbols.checked) {
+    alert("Selecione uma das opções para gerar uma Hash");
+    return;
+  }
+
+  if (boxLetters.checked) charset += letters;
+  if (boxNumbers.checked) charset += numbers;
+  if (boxSymbols.checked) charset += symbols;
+
+  generateHash(charset);
+});
+
+hashElement.addEventListener("click", copyHash);

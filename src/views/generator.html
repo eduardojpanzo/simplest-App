@@ -4,30 +4,49 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gerador de Senha</title>
+    <title>Gerador de Hash</title>
     <link rel="stylesheet" href="../styles/generator.css" />
   </head>
   <body>
-    <h1 class="logo">Gerador de Senha</h1>
+    <h1 class="logo">Gerador de Hash</h1>
 
-    <main class="conatiner-input">
-      <span>Tamanho <span id="valor"></span> Caracteres</span>
-      <input
-        id="slider"
-        class="slider"
-        type="range"
-        min="5"
-        max="25"
-        value="15"
-      />
+    <form class="conatiner-input" id="form">
+      <div>
+        <span>Tamanho da Hash: <span id="lenght"></span></span>
+        <input
+          id="slider"
+          class="slider"
+          type="range"
+          min="5"
+          max="25"
+          value="15"
+        />
+      </div>
 
-      <button id="button" class="button-cta">Gerar senha</button>
-    </main>
+      <div class="control-form">
+        <input type="checkbox" name="letters" id="letters" />
+        <span>Incluir Letras [a-z;A-Z]</span>
+      </div>
 
-    <div id="container-password" class="container-password hide">
-      <span class="title">Sua senha gerada foi:</span>
-      <span class="password" id="password"></span>
-      <span class="tooltip">Clique na senha para copiar ✔</span>
+      <div class="control-form">
+        <input type="checkbox" name="numbers" id="numbers" />
+        <span>Incluir Numeros [0-9]</span>
+      </div>
+
+      <div class="control-form">
+        <input type="checkbox" name="symbols" id="symbols" />
+        <span>Incluir Símbolos</span>
+      </div>
+
+      <button type="submit" id="button" class="button-cta">
+        Gerar uma Hash
+      </button>
+    </form>
+
+    <div id="container-hash" class="container-hash hide">
+      <span class="title">Clique na Hash gerada para copiar! </span>
+      <span class="hash" id="hash"></span>
+      <span class="tooltip">Copiado ✔</span>
     </div>
 
     <script src="../js/generator.js"></script>

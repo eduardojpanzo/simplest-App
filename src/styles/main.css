@@ -7,7 +7,6 @@
 
 :root {
   --blue-500: blue;
-
   --blueviolet-500: blueviolet;
 }
 
@@ -28,16 +27,22 @@
   align-items: center;
   justify-content: flex-start;
   flex-wrap: wrap;
-  border: 1px solid rgba(187, 187, 187, 0.432);
-  border-radius: 1rem;
-  text-align: center;
+  gap: 1rem;
 }
 .mainHome .hashtag a {
-  display: block;
-  width: 50%;
-  padding: 1.6rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15rem;
+  height: 7rem;
+  border: 1px solid rgba(187, 187, 187, 0.432);
+  border-radius: 1rem;
   color: var(--blue-500);
   font-size: 1.2rem;
   font-weight: bolder;
   text-decoration: none;
+}
+
+.mainHome .hashtag a:hover {
+  filter: brightness(0.2);
 }

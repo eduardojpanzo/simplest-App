@@ -93,6 +93,13 @@ header .image-text .header-text {
   font-size: 22px;
 }
 
+.sidebar .menu-bar {
+  height: calc(100% - 50px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .sidebar .search-box {
   background: var(--primary-color-light);
 }
@@ -125,7 +132,7 @@ header .image-text .header-text {
 .sidebar li .icon,
 .sidebar li .text {
   color: var(--text-color);
-  transition: var(--tran-03);
+  transition: var(--tran-02);
 }
 
 .sidebar li a {
@@ -145,4 +152,27 @@ header .image-text .header-text {
 .sidebar li a:hover .icon,
 .sidebar li a:hover .text {
   color: var(--sidebar-color);
+}
+
+.menu-bar .mode {
+  background: var(--primary-color-light);
+}
+
+.menu-bar .mode .moon-sun {
+  height: 50px;
+  width: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.menu-bar .mode i {
+  position: absolute;
+}
+
+.menu-bar .mode i.sun {
+  opacity: 0;
+}
+
+.menu-bar .mode .toggle-switch {
+  height: 1;
 }

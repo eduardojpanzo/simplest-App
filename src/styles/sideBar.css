@@ -24,6 +24,16 @@
 body {
   height: 100vh;
   background: var(--body-color);
+  transition: var(--tran-04);
+}
+
+body.dark {
+  --body-color: #18191a;
+  --sidebar-color: #242526;
+  --primary-color: #34383c;
+  --primary-color-light: #3a383c;
+  --toggle-color: #fff;
+  --text-color: #ccc;
 }
 
 /*==== Resuable Css ====*/
@@ -37,6 +47,13 @@ body {
   font-size: 1rem;
   font-weight: 500;
   color: var(--text-color);
+  transition: var(--tran-04);
+  white-space: nowrap;
+  opacity: 1;
+}
+
+.sidebar.close .text {
+  opacity: 0;
 }
 
 /* ==== Sidebar ==== */
@@ -48,6 +65,11 @@ body {
   width: 250px;
   padding: 10px 14px;
   background: var(--sidebar-color);
+  transition: var(--tran-05);
+}
+
+.sidebar.close {
+  width: 88px;
 }
 
 .sidebar header {
@@ -91,6 +113,7 @@ header .image-text .header-text {
   border-radius: 50%;
   color: var(--sidebar-color);
   font-size: 22px;
+  cursor: pointer;
 }
 
 .sidebar .menu-bar {
@@ -102,6 +125,7 @@ header .image-text .header-text {
 
 .sidebar .search-box {
   background: var(--primary-color-light);
+  border-radius: 6px;
 }
 
 .search-box input {
@@ -155,6 +179,8 @@ header .image-text .header-text {
 }
 
 .menu-bar .mode {
+  position: relative;
+  border-radius: 6px;
   background: var(--primary-color-light);
 }
 
@@ -167,19 +193,31 @@ header .image-text .header-text {
 
 .menu-bar .mode i {
   position: absolute;
+  transition: var(--tran-03);
 }
 
 .menu-bar .mode i.sun {
   opacity: 0;
 }
 
+body.dark .menu-bar .mode i.sun {
+  opacity: 1;
+}
+
+body.dark .menu-bar .mode i.moon {
+  opacity: 0;
+}
+
 .menu-bar .mode .toggle-switch {
+  position: absolute;
+  right: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
   min-width: 60px;
   cursor: pointer;
+  background-color: var(--primary-color-light);
 }
 
 .toggle-switch .switch {
@@ -200,4 +238,9 @@ header .image-text .header-text {
   left: 5px;
   transform: translateY(-50%);
   background: var(--sidebar-color);
+  transition: var(--tran-03);
+}
+
+body.dark .switch::before {
+  left: 24px;
 }

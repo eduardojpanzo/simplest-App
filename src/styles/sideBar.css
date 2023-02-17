@@ -174,5 +174,30 @@ header .image-text .header-text {
 }
 
 .menu-bar .mode .toggle-switch {
-  height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-width: 60px;
+  cursor: pointer;
+}
+
+.toggle-switch .switch {
+  position: relative;
+  width: 44px;
+  height: 22px;
+  border-radius: 25px;
+  background: var(--toggle-color);
+}
+
+.switch::before {
+  content: "";
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  background: var(--sidebar-color);
 }

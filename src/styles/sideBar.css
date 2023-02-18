@@ -66,6 +66,7 @@ body.dark {
   padding: 10px 14px;
   background: var(--sidebar-color);
   transition: var(--tran-05);
+  z-index: 100;
 }
 
 .sidebar.close {
@@ -178,6 +179,11 @@ header .image-text .header-text {
   color: var(--sidebar-color);
 }
 
+body.dark .sidebar li a:hover .icon,
+body.dark .sidebar li a:hover .text {
+  color: var(--text-color);
+}
+
 .menu-bar .mode {
   position: relative;
   border-radius: 6px;
@@ -243,4 +249,24 @@ body.dark .menu-bar .mode i.moon {
 
 body.dark .switch::before {
   left: 24px;
+}
+
+.home {
+  position: relative;
+  left: 250px;
+  height: 100vh;
+  width: calc(100% - 250px);
+  background: var(--body-color);
+  transition: var(--tran-05);
+}
+
+.sidebar.close ~ .home {
+  left: 88px;
+  width: calc(100% - 88px);
+}
+.text {
+  font-size: 30px;
+  font-weight: 500;
+  color: var(--text-color);
+  padding: 8px 40px;
 }

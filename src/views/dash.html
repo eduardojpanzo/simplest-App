@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../styles/sideBar.css" />
-    <title>sideBar</title>
+    <link rel="stylesheet" href="../styles/dash.css" />
+    <title>Dashboard</title>
   </head>
   <body>
     <nav class="sidebar">
@@ -100,9 +100,50 @@
     </nav>
 
     <section class="home">
+      <div class="topBar">
+        <div class="user-pic" onclick="toggleMenu()">
+          <img src="img" alt="user" />
+        </div>
+
+        <div class="sub-menu-wrap" id="subMenu">
+          <div class="sub-menu">
+            <div class="user-info">
+              <img src="user.png" alt="user" />
+              <h3>James Aldriano</h3>
+            </div>
+            <hr />
+
+            <a href="#" class="sub-menu-link">
+              <img src="iconPorfil.png" alt="iconPorfil" />
+              <p>Edit Profile</p>
+              <span>></span>
+            </a>
+
+            <a href="#" class="sub-menu-link">
+              <img src="setting.png" alt="iconPorfil" />
+              <p>Settingd</p>
+              <span>></span>
+            </a>
+
+            <a href="#" class="sub-menu-link">
+              <img src="logo.png" alt="iconPorfil" />
+              <p>Logo</p>
+              <span>></span>
+            </a>
+          </div>
+        </div>
+      </div>
+
       <div class="text">Dashboard</div>
     </section>
 
-    <script src="../js/sideBar.js"></script>
+    <script src="../js/dash.js"></script>
+    <script>
+      let subMenu = document.querySelector("#subMenu");
+
+      function toggleMenu() {
+        subMenu.classList.toggle("open-menu");
+      }
+    </script>
   </body>
 </html>

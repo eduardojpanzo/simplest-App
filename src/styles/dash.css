@@ -1,5 +1,3 @@
-@import url("https://fonts.goo");
-
 * {
   font-family: "Poppins", sans-serif;
   margin: 0;
@@ -35,9 +33,115 @@ body.dark {
   --toggle-color: #fff;
   --text-color: #ccc;
 }
+/* geral--- */
+.text {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-color);
+  transition: var(--tran-04);
+  white-space: nowrap;
+  opacity: 1;
+}
 
+/* ----------- HEADER -------------------- */
+header .topBar {
+  position: relative;
+  background: var(--sidebar-color);
+  width: 100%;
+  padding: 10px 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/* imagotipo */
+header .imagitipo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.imagitipo img {
+  width: 2.5rem;
+  border-radius: 6px;
+}
+.imagitipo .name {
+  font-weight: 600;
+}
+.imagitipo .profession {
+  margin-top: -2px;
+}
+/* user picture */
+header .user-pic {
+  width: 2.5rem;
+  margin-left: 2rem;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+.user-info img {
+  width: 100%;
+  object-fit: cover;
+}
+/* submenu */
+header .sub-menu-wrap {
+  position: absolute;
+  top: 100%;
+  right: 10%;
+  width: 320px;
+  max-height: 0px;
+  overflow: hidden;
+  transition: var(--tran-05);
+}
+.sub-menu-wrap.open-menu {
+  max-height: 400px;
+}
+.sub-menu-wrap .sub-menu {
+  background: var(--sidebar-color);
+  padding: 0.65rem;
+  margin: 0.1rem;
+}
+.sub-menu .user-info {
+  display: flex;
+  align-items: center;
+}
+.sub-menu img {
+  width: 3.75rem;
+  height: 3.75rem;
+  border-radius: 50%;
+  margin-right: 15px;
+  overflow: hidden;
+}
+.sub-menu-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-color);
+  margin: 12px 0;
+}
+.sub-menu-link p {
+  width: 100%;
+}
+.sub-menu-link img {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: var(--body-color);
+  border-radius: 50%;
+  padding: 8px;
+  margin-right: 15px;
+}
+.sub-menu-link span {
+  font-size: 22px;
+  transition: var(--tran-05);
+}
+.sub-menu-link:hover span {
+  transform: translateX(5px);
+}
+.sub-menu-link:hover p {
+  font-weight: bold;
+}
+
+/* ----------- NAVBAR -------------------- */
 /*==== Resuable Css ====*/
-.sidebar .image {
+/* .sidebar .image {
   min-width: 60px;
   display: flex;
   align-items: center;
@@ -56,7 +160,7 @@ body.dark {
   opacity: 0;
 }
 
-/* ==== Sidebar ==== */
+/* ==== Sidebar ==== 
 .sidebar {
   position: fixed;
   top: 0;
@@ -75,29 +179,6 @@ body.dark {
 
 .sidebar header {
   position: relative;
-}
-
-.sidebar .image-text img {
-  width: 40px;
-  border-radius: 6px;
-}
-
-.sidebar header .image-text {
-  display: flex;
-  align-items: center;
-}
-
-header .image-text .header-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.header-text .name {
-  font-weight: 600;
-}
-
-.header-text .profession {
-  margin-top: -2px;
 }
 
 .sidebar header .toggle {
@@ -269,97 +350,4 @@ body.dark .switch::before {
   font-weight: 500;
   color: var(--text-color);
   padding: 8px 40px;
-}
-
-/* ----------- HERO -------------------- */
-.topBar {
-  position: relative;
-  background: var(--sidebar-color);
-  width: 100%;
-  padding: 10px 10%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-.topBar .user-pic {
-  width: 40px;
-  border-radius: 50%;
-  cursor: pointer;
-  margin-left: 30px;
-}
-
-.sub-menu-wrap {
-  position: absolute;
-  top: 100%;
-  right: 10%;
-  width: 320px;
-  max-width: 0px;
-  overflow: hidden;
-  transition: var(--tran-05);
-}
-.sub-menu-wrap.open-menu {
-  max-width: 400px;
-}
-
-.sub-menu {
-  background: #fff;
-  padding: 20px;
-  margin: 10px;
-}
-
-.user-info {
-  display: flex;
-  align-items: center;
-}
-
-.user-info h3 {
-  font-weight: 500;
-}
-
-.user-info img {
-  width: 60px;
-  border-radius: 50%;
-  margin-right: 15px;
-}
-
-.sub-menu hr {
-  border: 0;
-  height: 1px;
-  width: 100%;
-  background: #ccc;
-  margin: 15px 0 10px;
-}
-
-.sub-menu-link {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: #525252;
-  margin: 12px 0;
-}
-
-.sub-menu-link p {
-  width: 100%;
-}
-
-.sub-menu-link img {
-  width: 40px;
-  background: #e5e5e5;
-  border-radius: 50%;
-  padding: 8px;
-  margin-right: 15px;
-}
-
-.sub-menu-link span {
-  font-size: 22px;
-  transition: var(--tran-05);
-}
-
-.sub-menu-link:hover span {
-  transform: translateX(5px);
-}
-
-.sub-menu-link:hover p {
-  font-weight: bold;
-}
+} */

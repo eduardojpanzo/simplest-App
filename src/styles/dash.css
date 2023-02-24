@@ -54,19 +54,19 @@ header .topBar {
   justify-content: space-between;
 }
 /* imagotipo */
-header .imagitipo {
+header .imagotipo {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
-.imagitipo img {
+.imagotipo img {
   width: 2.5rem;
   border-radius: 6px;
 }
-.imagitipo .name {
+.imagotipo .name {
   font-weight: 600;
 }
-.imagitipo .profession {
+.imagotipo .profession {
   margin-top: -2px;
 }
 /* user picture */

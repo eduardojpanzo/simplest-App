@@ -10,46 +10,18 @@
   <body>
     <header>
       <div class="topBar">
-        <div class="imagitipo">
-          <img src="logo.png" alt="logo" />
+        <div class="imagotipo"></div>
 
-          <div class="text">
-            <span class="name">CodingLab</span> <br />
-            <span class="profession">Web developer</span>
-          </div>
-        </div>
-
-        <div class="user-pic" onclick="toggleMenu()">
+        <div class="user-pic" onclick="toggleShowSubMenu()">
           <img src="img" alt="user" />
         </div>
 
         <div class="sub-menu-wrap" id="subMenu">
           <div class="sub-menu">
-            <div class="user-info">
-              <img src="user.png" alt="user" />
-              <h3>James Aldriano</h3>
-            </div>
+            <div class="user-info"></div>
             <hr />
 
-            <div class="links">
-              <a href="#" class="sub-menu-link">
-                <img src="iconPorfil.png" alt="iconPorfil" />
-                <p>Edit Profile</p>
-                <span>></span>
-              </a>
-
-              <a href="#" class="sub-menu-link">
-                <img src="setting.png" alt="iconPorfil" />
-                <p>Settingd</p>
-                <span>></span>
-              </a>
-
-              <a href="#" class="sub-menu-link">
-                <img src="logo.png" alt="iconPorfil" />
-                <p>Logo</p>
-                <span>></span>
-              </a>
-            </div>
+            <div class="links"></div>
           </div>
         </div>
       </div>
@@ -143,13 +115,7 @@
       </section>
     </main>
 
+    <script src="../mock/dash.js"></script>
     <script src="../js/dash.js"></script>
-    <script>
-      let subMenu = document.querySelector("#subMenu");
-
-      function toggleMenu() {
-        subMenu.classList.toggle("open-menu");
-      }
-    </script>
   </body>
 </html>

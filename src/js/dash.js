@@ -7,7 +7,7 @@ const searchBtn = body.querySelector(".search-box");
 const modeText = body.querySelector(".mode-text");
 const modeSwitch = body.querySelector(".toggle-switch");
 
-setSubMenuLinks();
+setuserInitialDate();
 
 // toggle.addEventListener("click", () => {
 //   sidebar.classList.toggle("close");
@@ -55,4 +55,6 @@ function setuserInitialDate() {
     <span class="profession">${userData.company.office}</span>
   </div>
   `;
+
+  setSubMenuLinks();
 }

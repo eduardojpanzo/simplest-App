@@ -90,6 +90,7 @@ header .sub-menu-wrap {
   max-height: 0px;
   overflow: hidden;
   transition: var(--tran-05);
+  z-index: 99;
 }
 .sub-menu-wrap.open-menu {
   max-height: 400px;
@@ -139,31 +140,10 @@ header .sub-menu-wrap {
   font-weight: bold;
 }
 
-/* ----------- NAVBAR -------------------- */
-/*==== Resuable Css ====*/
-/* .sidebar .image {
-  min-width: 60px;
-  display: flex;
-  align-items: center;
-}
-
-.sidebar .text {
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--text-color);
-  transition: var(--tran-04);
-  white-space: nowrap;
-  opacity: 1;
-}
-
-.sidebar.close .text {
-  opacity: 0;
-}
-
-/* ==== Sidebar ==== 
+/* ----------- SIDEBAR -------------------- */
 .sidebar {
   position: fixed;
-  top: 0;
+  top: 56px;
   left: 0;
   height: 100%;
   width: 250px;
@@ -177,23 +157,33 @@ header .sub-menu-wrap {
   width: 88px;
 }
 
-.sidebar header {
-  position: relative;
+.sidebar.close .text {
+  opacity: 0;
 }
 
-.sidebar header .toggle {
+.sidebar .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 60px;
+  font-size: 20px;
+}
+
+.sidebar .toggle {
+  position: relative;
+}
+.toggle i {
   position: absolute;
   top: 50%;
   right: -25px;
-  transform: translateY(-50%);
   width: 25px;
   height: 25px;
+  border-radius: 50%;
   background: var(--primary-color);
+  color: var(--sidebar-color);
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  color: var(--sidebar-color);
   font-size: 22px;
   cursor: pointer;
 }
@@ -205,11 +195,10 @@ header .sub-menu-wrap {
   justify-content: space-between;
 }
 
-.sidebar .search-box {
+.menu-bar .search-box {
   background: var(--primary-color-light);
   border-radius: 6px;
 }
-
 .search-box input {
   width: 100%;
   height: 100%;
@@ -219,20 +208,15 @@ header .sub-menu-wrap {
   background: var(--primary-color-light);
 }
 
-.sidebar li {
+.menu-bar li {
   height: 50px;
   margin-top: 10px;
   list-style: none;
   display: flex;
   align-items: center;
-}
-
-.sidebar li .icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 60px;
-  font-size: 20px;
+  border-radius: 6px;
+  transition: var(--tran-04);
+  cursor: pointer;
 }
 
 .sidebar li .icon,
@@ -241,27 +225,17 @@ header .sub-menu-wrap {
   transition: var(--tran-02);
 }
 
-.sidebar li a {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  border-radius: 6px;
-  transition: var(--tran-04);
-}
-
-.sidebar li a:hover {
+.sidebar .menu-links li:hover {
   background: var(--primary-color);
 }
 
-.sidebar li a:hover .icon,
-.sidebar li a:hover .text {
+.sidebar .menu-links li:hover .icon,
+.sidebar .menu-links li:hover .text {
   color: var(--sidebar-color);
 }
 
-body.dark .sidebar li a:hover .icon,
-body.dark .sidebar li a:hover .text {
+body.dark .sidebar .menu-links li:hover .icon,
+body.dark .sidebar .menu-links li:hover .text {
   color: var(--text-color);
 }
 
@@ -270,32 +244,20 @@ body.dark .sidebar li a:hover .text {
   border-radius: 6px;
   background: var(--primary-color-light);
 }
-
-.menu-bar .mode .moon-sun {
+.mode .moon-sun {
   height: 50px;
   width: 60px;
   display: flex;
   align-items: center;
 }
-
-.menu-bar .mode i {
+.mode i {
   position: absolute;
   transition: var(--tran-03);
 }
-
-.menu-bar .mode i.sun {
+.mode i.sun {
   opacity: 0;
 }
-
-body.dark .menu-bar .mode i.sun {
-  opacity: 1;
-}
-
-body.dark .menu-bar .mode i.moon {
-  opacity: 0;
-}
-
-.menu-bar .mode .toggle-switch {
+.mode .toggle-switch {
   position: absolute;
   right: 0;
   display: flex;
@@ -304,9 +266,7 @@ body.dark .menu-bar .mode i.moon {
   height: 100%;
   min-width: 60px;
   cursor: pointer;
-  background-color: var(--primary-color-light);
 }
-
 .toggle-switch .switch {
   position: relative;
   width: 44px;
@@ -314,7 +274,6 @@ body.dark .menu-bar .mode i.moon {
   border-radius: 25px;
   background: var(--toggle-color);
 }
-
 .switch::before {
   content: "";
   position: absolute;
@@ -328,11 +287,18 @@ body.dark .menu-bar .mode i.moon {
   transition: var(--tran-03);
 }
 
+body.dark .mode i.sun {
+  opacity: 1;
+}
+body.dark .mode i.moon {
+  opacity: 0;
+}
 body.dark .switch::before {
   left: 24px;
 }
 
-.home {
+/* ------- PAGE PLACE -------------*/
+.page-place {
   position: relative;
   left: 250px;
   height: 100vh;
@@ -340,14 +306,13 @@ body.dark .switch::before {
   background: var(--body-color);
   transition: var(--tran-05);
 }
-
-.sidebar.close ~ .home {
+.sidebar.close ~ .page-place {
   left: 88px;
   width: calc(100% - 88px);
 }
-.text {
+.page-place .title {
   font-size: 30px;
   font-weight: 500;
   color: var(--text-color);
   padding: 8px 40px;
-} */
+}

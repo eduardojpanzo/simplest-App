@@ -2,27 +2,27 @@ const body = document.querySelector("body");
 const subMenu = document.querySelector("#subMenu");
 
 const sidebar = body.querySelector(".sidebar");
-const toggle = body.querySelector(".toggle");
-const searchBtn = body.querySelector(".search-box");
-const modeText = body.querySelector(".mode-text");
-const modeSwitch = body.querySelector(".toggle-switch");
+const toggle = sidebar.querySelector(".toggle");
+const searchBtn = sidebar.querySelector(".search-box");
+const modeText = sidebar.querySelector(".mode-text");
+const modeSwitch = sidebar.querySelector(".toggle-switch");
 
-setuserInitialDate();
+initializationPage();
 
-// toggle.addEventListener("click", () => {
-//   sidebar.classList.toggle("close");
-// });
+toggle.addEventListener("click", () => {
+  sidebar.classList.toggle("close");
+});
 
-// modeSwitch.addEventListener("click", () => {
-//   body.classList.toggle("dark");
+modeSwitch.addEventListener("click", () => {
+  body.classList.toggle("dark");
 
-//   if (body.classList.contains("dark")) {
-//     modeText.innerHTML = "Light Mode";
-//     return;
-//   }
+  if (body.classList.contains("dark")) {
+    modeText.innerHTML = "Light Mode";
+    return;
+  }
 
-//   modeText.innerHTML = "Dark Mode";
-// });
+  modeText.innerHTML = "Dark Mode";
+});
 
 function toggleShowSubMenu() {
   subMenu.classList.toggle("open-menu");
@@ -57,4 +57,21 @@ function setuserInitialDate() {
   `;
 
   setSubMenuLinks();
+}
+
+function setSideBarItems() {
+  sidebar.querySelector(".items").innerHTML = "";
+  sideBarItems.forEach(({ value, icon }, i) => {
+    sidebar.querySelector(".items").innerHTML += `
+    <li class="nav-link">
+      <i class="icon">${icon}</i>
+      <span class="text nav-text">${value}</span>
+    </li>
+  `;
+  });
+}
+
+function initializationPage() {
+  setuserInitialDate();
+  setSideBarItems();
 }

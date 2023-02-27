@@ -17,9 +17,9 @@ const subMenuLinks = [
   { value: "Out", path: "index.html", icon: "" },
 ];
 
-const menuItens = [
-  { value: "", icon: "" },
-  { value: "", icon: "" },
-  { value: "", icon: "" },
-  { value: "", icon: "" },
+const sideBarItems = [
+  { value: "Home", icon: "H" },
+  { value: "Projects", icon: "P" },
+  { value: "Tasks", icon: "T" },
+  { value: "Information", icon: "I" },
 ];

@@ -18,7 +18,7 @@
 
   --red: #eb6666;
   --blue: #26a8fe;
-  --green: #26fed7;
+  --green: #2da30f;
 }
 
 .darkMode:root {
@@ -58,15 +58,6 @@ body {
   overflow: hidden;
 }
 
-.todo .header {
-  min-height: 200px;
-  padding: 1.5rem;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  color: var(--text-primary);
-}
-
 .todo .float {
   display: flex;
   align-content: center;
@@ -87,6 +78,43 @@ button.btn {
   background-color: var(--bg-secondary);
   font-size: x-large;
   cursor: pointer;
+  transition: all ease-in 0.1s;
+}
+button.btn:hover {
+  filter: brightness(0.8);
+}
+
+.todo .header {
+  min-height: 200px;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: var(--text-primary);
+}
+.header .resume-cicle {
+  width: 4rem;
+  height: 4rem;
+  border: 0.4rem solid var(--green);
+  border-radius: 50%;
+}
+.header .numbers {
+  display: flex;
+  gap: 1.5rem;
+  user-select: none;
+}
+.numbers .number {
+  font-size: xx-large;
+  font-weight: 700;
+}
+.numbers .dones {
+  color: var(--green);
+}
+.numbers .process {
+  color: var(--blue);
+}
+.numbers .backlog {
+  color: var(--red);
 }
 
 .content-item {

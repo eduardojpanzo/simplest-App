@@ -10,7 +10,7 @@
   <body>
     <main class="todo">
       <div class="container">
-        <div class="float">
+        <div class="float" id="create">
           <button class="btn">+</button>
         </div>
 
@@ -36,7 +36,10 @@
       </div>
 
       <div class="modal-overlay">
-        <div class="modal-content?"></div>
+        <div class="modal-content"></div>
+        <div class="float modal-close">
+          <button class="btn">X</button>
+        </div>
       </div>
     </main>
 
@@ -46,25 +49,4 @@
 
 <!-- 
   model of modal: to update or delete
-  <div class="todo-modal">
-  <div class="title">Title</div>
-  <div class="todo-resume">
-    <select name="priority" id="priority">
-        <option value="high">High</option>
-        <option value="medium">Medium</option>
-        <option value="low">Low</option>
-    </select>
-    <select name="status" id="status">
-        <option value="done">Done</option>
-        <option value="process">Process</option>
-        <option value="toDo">ToDo</option>
-    </select>
-  </div>
-  <div class="about">
-    <p class="desc">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut,
-      voluptatum!
-    </p>
-    <p class="create-at"></p>
-  </div>
-</div> -->
+   -->

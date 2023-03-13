@@ -13,6 +13,7 @@
   --bg-primary: #ffffff;
   --bg-secondary: #f4f3f4;
   --bg-third: #f7f7f7;
+  --bg-trasparent: rgba(255, 255, 255, 0.7);
 
   --transparent: rgba(0, 0, 0, 0.2);
 
@@ -29,6 +30,7 @@
   --bg-primary: #22252d;
   --bg-secondary: #292d36;
   --bg-third: #262933;
+  --bg-trasparent: rgba(0, 0, 0, 0.7);
 
   --transparent: rgba(0, 0, 0, 0.2);
 
@@ -150,15 +152,22 @@ button.btn:hover {
   font-weight: lighter;
 }
 
-// ---- modal component
-.modal-overlay {
+/*modal component*/
+.todo .modal-overlay {
   position: fixed;
   inset: 0;
+  background: var(--bg-trasparent);
 
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .modal-content {
+  width: 350px;
+
+  max-width: 350px;
+  min-height: 300px;
+  box-shadow: 0 0 10px var(--transparent);
+  background: var(--bg-primary);
   border-radius: 1rem;
 }

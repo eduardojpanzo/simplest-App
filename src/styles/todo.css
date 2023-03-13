@@ -149,3 +149,16 @@ button.btn:hover {
   justify-content: space-between;
   font-weight: lighter;
 }
+
+// ---- modal component
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-content {
+  border-radius: 1rem;
+}

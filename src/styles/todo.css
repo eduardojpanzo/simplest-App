@@ -171,3 +171,33 @@ button.btn:hover {
   background: var(--bg-primary);
   border-radius: 1rem;
 }
+
+/*modal Content*/
+.modal-content .todo-preview {
+  padding: 1rem;
+}
+.todo-preview .control-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.control-form label {
+  font-weight: bold;
+  margin-right: 0.75rem;
+}
+.control-form input,
+textarea,
+select {
+  background: transparent;
+  border: 1px solid var(--bg);
+  font-size: large;
+  margin-bottom: 0.65rem;
+  border-radius: 0.5rem;
+  padding: 0.2rem;
+  outline: none;
+  resize: none;
+}
+.todo-resume {
+  display: flex;
+  justify-content: space-between;
+}

@@ -36,7 +36,41 @@
       </div>
 
       <div class="modal-overlay">
-        <div class="modal-content"></div>
+        <div class="modal-content">
+          <form class="todo-preview">
+            <div class="control-form">
+              <label for="title">Title: </label>
+              <input type="text" name="title" id="title" />
+            </div>
+
+            <div class="todo-resume">
+              <select name="priority" id="priority">
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+              </select>
+              <select name="status" id="status">
+                <option value="done">Done</option>
+                <option value="process">Process</option>
+                <option value="toDo">ToDo</option>
+              </select>
+            </div>
+
+            <div class="control-form about">
+              <label for="desc">About TODO</label>
+              <textarea name="desc" id="desc">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, voluptatum!</textarea
+              >
+            </div>
+
+            <div class="control-form">
+              <label>Create At</label>
+              <input type="date" name="date" id="date" />
+            </div>
+
+            <button class="btn">+</button>
+          </form>
+        </div>
         <div class="float modal-close">
           <button class="btn">X</button>
         </div>

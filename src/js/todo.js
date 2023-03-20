@@ -1,4 +1,4 @@
-let data = todoData ? todoData : [];
+let todos = todoData ? todoData : [];
 
 const modalTaskData = `
 <form class="todo-preview">
@@ -38,6 +38,7 @@ const modalTaskData = `
 const btnSwithTheme = document.querySelector(".btn.switch-theme");
 const btnToggleModal = document.querySelectorAll(".btn.toggle-modal");
 const modalOverlay = document.querySelector(".modal-overlay");
+const contentItems = document.querySelector(".content-items");
 
 btnSwithTheme.addEventListener("click", toggleTheme);
 btnToggleModal.forEach((el) => el.addEventListener("click", toggleShowModal));
@@ -56,35 +57,38 @@ function toggleShowModal() {
 function initTodoApp() {
   btnSwithTheme.innerHTML = svgDark;
   btnToggleModal[0].innerHTML = svgAdd;
-}
 
-function constructTodoData(data) {
-  return {
-    id: Math.random(),
-    ...data,
-  };
+  contentItems.innerHTML = ``;
+  todos.map((todo) => {
+    contentItems.innerHTML += `
+    <div class="todo-item">
+    <div class="title">${todo.title}</div>
+    <div class="todo-resume">
+      <span class="priority">${todo.priority}</span>
+      <span class="staus">${todo.status}</span>
+    </div>
+    <p class="create-at">${todo.date}</p>
+  </div>
+    `;
+  });
 }
 
 function handlecreateTodo(e) {
   e.preventDefault();
 
-  const title = e.target.title.value;
-  const priority = e.target.priority.value;
-  const status = e.target.status.value;
-  const desc = e.target.desc.value;
-  const date = e.target.date.value;
+  const newData = {
+    id: Math.random(),
+    title: e.target.title.value,
+    priority: e.target.priority.value,
+    status: e.target.status.value,
+    desc: e.target.desc.value,
+    date: e.target.date.value,
+  };
 
-  const newData = constructTodoData({
-    title,
-    priority,
-    status,
-    desc,
-    date,
-  });
+  todos = [...todos, newData];
 
-  data = [...data, newData];
-
-  localStorage.setItem("todoData", JSON.stringify(data));
+  localStorage.setItem("todoData", JSON.stringify(todos));
+  toggleShowModal();
 }
 
 initTodoApp();

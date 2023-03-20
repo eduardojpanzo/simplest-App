@@ -38,7 +38,7 @@
 
       <div class="modal-overlay">
         <div class="modal-content">
-          <form class="todo-preview">
+          <form class="todo-preview" onsubmit="handlecreateTodo(event)">
             <div class="control-form">
               <label for="title">Title: </label>
               <input type="text" name="title" id="title" />
@@ -78,6 +78,7 @@
       </div>
     </main>
 
+    <script src="../data/index.js"></script>
     <script src="../data/svg.js"></script>
     <script src="../js/todo.js"></script>
   </body>

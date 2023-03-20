@@ -1,3 +1,5 @@
+let data = todoData ? todoData : [];
+
 const modalTaskData = `
 <form class="todo-preview">
     <div class="control-form">
@@ -54,6 +56,35 @@ function toggleShowModal() {
 function initTodoApp() {
   btnSwithTheme.innerHTML = svgDark;
   btnToggleModal[0].innerHTML = svgAdd;
+}
+
+function constructTodoData(data) {
+  return {
+    id: Math.random(),
+    ...data,
+  };
+}
+
+function handlecreateTodo(e) {
+  e.preventDefault();
+
+  const title = e.target.title.value;
+  const priority = e.target.priority.value;
+  const status = e.target.status.value;
+  const desc = e.target.desc.value;
+  const date = e.target.date.value;
+
+  const newData = constructTodoData({
+    title,
+    priority,
+    status,
+    desc,
+    date,
+  });
+
+  data = [...data, newData];
+
+  localStorage.setItem("todoData", JSON.stringify(data));
 }
 
 initTodoApp();

@@ -76,11 +76,18 @@ button.btn {
   width: 40px;
   height: 40px;
   border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 50px;
   background-color: var(--bg-secondary);
+  color: var(--text-primary);
   font-size: x-large;
   cursor: pointer;
   transition: all ease-in 0.1s;
+}
+button.btn svg {
+  width: 1.5rem;
 }
 button.btn:hover {
   filter: brightness(0.8);
@@ -130,6 +137,7 @@ button.btn:hover {
   box-shadow: 0px -2px 16px var(--transparent);
   background: var(--bg-secondary);
   overflow: auto;
+  color: var(--text-primary);
 }
 .content-items .todo-item {
   padding: 0.4rem;
@@ -157,10 +165,14 @@ button.btn:hover {
   position: fixed;
   inset: 0;
   background: var(--bg-trasparent);
+  color: var(--text-primary);
 
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
+}
+.todo .modal-overlay.modal-show {
+  display: flex;
 }
 .modal-content {
   width: 350px;
@@ -171,8 +183,6 @@ button.btn:hover {
   background: var(--bg-primary);
   border-radius: 1rem;
 }
-
-/*modal Content*/
 .modal-content .todo-preview {
   padding: 1rem;
 }

@@ -1,7 +1,38 @@
 let todos = todoData ? todoData : [];
 
-const modalTaskData = `
-<form class="todo-preview">
+const CreateTodoModalFrame = `
+<form class="todo-preview" onsubmit="handlecreateTodo(event)">
+    <div class="control-form">
+        <label for="title">Title: </label>
+        <input type="text" name="title" id="title" />
+    </div>
+    <div class="todo-resume">
+        <select name="priority" id="priority">
+        <option value="high">High</option>
+        <option value="medium">Medium</option>
+        <option value="low">Low</option>
+        </select>
+        <select name="status" id="status">
+        <option value="process">Process</option>
+        <option value="toDo">ToDo</option>
+        </select>
+    </div>
+    <div class="control-form about">
+        <label for="desc">About TODO</label>
+        <textarea name="desc" id="desc"></textarea>
+    </div>
+    <div class="control-form">
+        <label>Create At</label>
+        <input type="date" name="date" id="date" />
+    </div>
+
+    <button class="btn">${svgAdd}</button>
+</form>
+`;
+
+const PreviewTodoModalFrame = `
+<form class="todo-preview" onsubmit="handleUpdateTodo(event)">
+    <input type="hidden" id="id" name="id">
     <div class="control-form">
     <input type="text" name="title" id="title" />
     </div>
@@ -41,7 +72,9 @@ const modalOverlay = document.querySelector(".modal-overlay");
 const contentItems = document.querySelector(".content-items");
 
 btnSwithTheme.addEventListener("click", toggleTheme);
-btnToggleModal.forEach((el) => el.addEventListener("click", toggleShowModal));
+btnToggleModal.forEach((el) =>
+  el.addEventListener("click", handleToggleShowCreateTodoModal)
+);
 
 function toggleTheme(e) {
   const isdark = document.querySelector("html").classList.toggle("darkMode");
@@ -50,8 +83,15 @@ function toggleTheme(e) {
     : (e.currentTarget.innerHTML = svgDark);
 }
 
+function handleToggleShowCreateTodoModal() {
+  toggleShowModal()
+    ? (modalOverlay.querySelector(".modal-content").innerHTML =
+        CreateTodoModalFrame)
+    : (modalOverlay.querySelector(".modal-content").innerHTML = "");
+}
+
 function toggleShowModal() {
-  modalOverlay.classList.toggle("modal-show");
+  return modalOverlay.classList.toggle("modal-show");
 }
 
 function initTodoApp() {
@@ -88,6 +128,7 @@ function handlecreateTodo(e) {
   todos = [...todos, newData];
 
   localStorage.setItem("todoData", JSON.stringify(todos));
+  initTodoApp();
   toggleShowModal();
 }
 

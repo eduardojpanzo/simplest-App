@@ -54,7 +54,9 @@ function handleToggleShowCreateTodoModal() {
     : (modalOverlay.querySelector(".modal-content").innerHTML = "");
 }
 
-function handleToggleShowUpdateTodoModal(data) {
+function handleToggleShowUpdateTodoModal(id) {
+  const data = todos.filter((item) => item.id === id)[0];
+
   toggleShowModal()
     ? (modalOverlay.querySelector(".modal-content").innerHTML =
         mountFormUpdate(data))
@@ -79,16 +81,14 @@ function handlecreateTodo(e) {
 
   todos = [...todos, newData];
 
-  localStorage.setItem("todoData", JSON.stringify(todos));
-  initTodoApp();
-  toggleShowModal();
+  ChangeStorge(todos);
 }
 
 function handleUpdateTodo(e) {
   e.preventDefault();
 
   const newData = {
-    id: e.target.id,
+    id: Number(e.target.id.value),
     title: e.target.title.value,
     priority: e.target.priority.value,
     status: e.target.status.value,
@@ -96,7 +96,7 @@ function handleUpdateTodo(e) {
     date: e.target.date.value,
   };
 
-  todos.map((todo) => {
+  const data = todos.map((todo) => {
     if (todo.id === newData.id) {
       return newData;
     }
@@ -104,18 +104,26 @@ function handleUpdateTodo(e) {
     return todo;
   });
 
-  console.log(todos);
+  ChangeStorge(data);
+}
 
-  // localStorage.setItem("todoData", JSON.stringify(todos));
-  // initTodoApp();
-  // toggleShowModal();
+function handleDeleteTodo(id) {
+  const data = todos.filter((item) => item.id !== id);
+
+  ChangeStorge(data);
+}
+
+function ChangeStorge(data) {
+  localStorage.setItem("todoData", JSON.stringify(data));
+  toggleShowModal();
+  initTodoApp();
 }
 
 function mountTodos() {
   contentItems.innerHTML = ``;
   todos.map((todo) => {
     contentItems.innerHTML += `
-    <div class="todo-item" onclick="handleToggleShowUpdateTodoModal(${todo})">
+    <div class="todo-item" onclick="handleToggleShowUpdateTodoModal(${todo.id})">
       <div class="title">${todo.title}</div>
       <div class="todo-resume">
         <span class="priority">${todo.priority}</span>
@@ -149,16 +157,19 @@ function mountFormUpdate(data) {
       </div>
 
       <div class="control-form about">
-      <label for="desc">About TODO</label>
-      <textarea name="desc" id="desc"> ${data.des}</textarea>
+        <label for="desc">About TODO</label>
+        <textarea name="desc" id="desc"> ${data.desc}</textarea>
       </div>
 
       <div class="control-form">
-      <label>Create At</label>
-      <input type="date" name="date" id="date" value="${data.date}" />
+        <label>Create At</label>
+        <input type="date" name="date" id="date" value="${data.date}" />
       </div>
 
-      <button class="btn">+</button>
+      <div class="content-btns">
+        <button onclick="handleDeleteTodo(${data.id})" type="button" class="btn">${svgThash}</button>
+        <button type="submit" class="btn">${svgUpdate}</button>
+      </div>
   </form>
   `;
 
@@ -166,6 +177,7 @@ function mountFormUpdate(data) {
 }
 
 function initTodoApp() {
+  todos = todoData ? todoData : [];
   btnSwithTheme.innerHTML = svgDark;
   btnToggleModal[0].innerHTML = svgAdd;
 

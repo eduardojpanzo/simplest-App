@@ -207,6 +207,12 @@ select {
   outline: none;
   resize: none;
 }
+.content-btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .todo-resume {
   display: flex;
   justify-content: space-between;

@@ -75,7 +75,7 @@ function handlecreateTodo(e) {
     title: e.target.title.value,
     priority: e.target.priority.value,
     status: e.target.status.value,
-    desc: e.target.desc.value,
+    desc: e.target.desc.value.trim(),
     date: e.target.date.value,
   };
 
@@ -92,7 +92,7 @@ function handleUpdateTodo(e) {
     title: e.target.title.value,
     priority: e.target.priority.value,
     status: e.target.status.value,
-    desc: e.target.desc.value,
+    desc: e.target.desc.value.trim(),
     date: e.target.date.value,
   };
 
@@ -158,7 +158,7 @@ function mountFormUpdate(data) {
 
       <div class="control-form about">
         <label for="desc">About TODO</label>
-        <textarea name="desc" id="desc"> ${data.desc}</textarea>
+        <textarea name="desc" id="desc">${data.desc}</textarea>
       </div>
 
       <div class="control-form">

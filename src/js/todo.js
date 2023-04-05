@@ -34,6 +34,7 @@ const btnSwithTheme = document.querySelector(".btn.switch-theme");
 const btnToggleModal = document.querySelectorAll(".btn.toggle-modal");
 const modalOverlay = document.querySelector(".modal-overlay");
 const contentItems = document.querySelector(".content-items");
+const numbers = document.querySelector(".header .numbers");
 
 btnSwithTheme.addEventListener("click", toggleTheme);
 btnToggleModal.forEach((el) =>
@@ -117,6 +118,22 @@ function ChangeStorge(data) {
   localStorage.setItem("todoData", JSON.stringify(data));
   toggleShowModal();
   initTodoApp();
+}
+
+function getDonesTodo() {
+  return todos.filter((todo) => todo.status === "done");
+}
+function getProcessTodo() {
+  return todos.filter((todo) => todo.status === "process");
+}
+function getBacklogTodo() {
+  return todos.filter((todo) => todo.status === "toDo");
+}
+
+function SetTodoNumbers() {
+  numbers.querySelector(".number.dones").innerHTML = getDonesTodo().length;
+  numbers.querySelector(".number.process").innerHTML = getProcessTodo().length;
+  numbers.querySelector(".number.backlog").innerHTML = getBacklogTodo().length;
 }
 
 function mountTodos() {

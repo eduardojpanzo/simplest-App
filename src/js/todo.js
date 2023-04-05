@@ -162,14 +162,26 @@ function mountFormUpdate(data) {
 
       <div class="todo-resume">
       <select name="priority" id="priority">
-          <option value="high">High</option>
-          <option value="medium">Medium</option>
-          <option value="low">Low</option>
+          <option value="high" ${
+            data.priority === "high" ? "selected" : ""
+          }>High</option>
+          <option value="medium" ${
+            data.priority === "medium" ? "selected" : ""
+          }>Medium</option>
+          <option value="low" ${
+            data.priority === "low" ? "selected" : ""
+          }>Low</option>
       </select>
       <select name="status" id="status">
-          <option value="done">Done</option>
-          <option value="process">Process</option>
-          <option value="toDo">ToDo</option>
+          <option value="done" ${
+            data.status === "done" ? "selected" : ""
+          }>Done</option>
+          <option value="process" ${
+            data.status === "process" ? "selected" : ""
+          }>Process</option>
+          <option value="toDo" ${
+            data.status === "toDo" ? "selected" : ""
+          }>ToDo</option>
       </select>
       </div>
 
@@ -184,7 +196,9 @@ function mountFormUpdate(data) {
       </div>
 
       <div class="content-btns">
-        <button onclick="handleDeleteTodo(${data.id})" type="button" class="btn">${svgThash}</button>
+        <button onclick="handleDeleteTodo(${
+          data.id
+        })" type="button" class="btn">${svgThash}</button>
         <button type="submit" class="btn">${svgUpdate}</button>
       </div>
   </form>

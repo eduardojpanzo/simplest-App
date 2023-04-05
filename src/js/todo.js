@@ -117,7 +117,7 @@ function handleDeleteTodo(id) {
 function ChangeStorge(data) {
   localStorage.setItem("todoData", JSON.stringify(data));
   toggleShowModal();
-  initTodoApp();
+  document.location.reload(true);
 }
 
 function getDonesTodo() {

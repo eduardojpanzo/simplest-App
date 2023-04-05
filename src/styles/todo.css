@@ -63,6 +63,7 @@ body {
 .todo .float {
   display: flex;
   align-content: center;
+  gap: 0.5rem;
   justify-content: space-around;
 
   position: absolute;
@@ -107,6 +108,12 @@ button.btn:hover {
   border: 0.4rem solid var(--green);
   border-radius: 50%;
 }
+.header .numbers-names {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style: circle;
+}
 .header .numbers {
   display: flex;
   gap: 1.5rem;
@@ -116,13 +123,13 @@ button.btn:hover {
   font-size: xx-large;
   font-weight: 700;
 }
-.numbers .dones {
+.dones {
   color: var(--green);
 }
-.numbers .process {
+.process {
   color: var(--blue);
 }
-.numbers .backlog {
+.backlog {
   color: var(--red);
 }
 
@@ -206,6 +213,7 @@ select {
   padding: 0.2rem;
   outline: none;
   resize: none;
+  color: var(--text-secondary);
 }
 .content-btns {
   display: flex;

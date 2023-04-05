@@ -199,6 +199,7 @@ function initTodoApp() {
   btnToggleModal[0].innerHTML = svgAdd;
 
   mountTodos();
+  SetTodoNumbers();
 }
 
 initTodoApp();

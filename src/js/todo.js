@@ -140,16 +140,37 @@ function mountTodos() {
   contentItems.innerHTML = ``;
   todos.map((todo) => {
     contentItems.innerHTML += `
-    <div class="todo-item" onclick="handleToggleShowUpdateTodoModal(${todo.id})">
+    <div class="todo-item" onclick="handleToggleShowUpdateTodoModal(${
+      todo.id
+    })">
       <div class="title">${todo.title}</div>
       <div class="todo-resume">
-        <span class="priority">${todo.priority}</span>
-        <span class="staus">${todo.status}</span>
+        <span class="priority">${defineUnicideEmoji(todo.priority)}</span>
+        <span class="staus">${defineUnicideEmoji(todo.status)}</span>
       </div>
-      <p class="create-at">${todo.date}</p>
+      <p class="create-at">${
+        todo.date ? `Since: <em>${todo.date}</em>` : ""
+      }</p>
     </div>
     `;
   });
+}
+
+function defineUnicideEmoji(name) {
+  switch (name) {
+    case "high":
+      return "🔥";
+    case "medium":
+      return "⚡";
+    case "low":
+      return "💤";
+    case "done":
+      return "✅";
+    case "process":
+      return "⏳";
+    case "toDo":
+      return "📌";
+  }
 }
 
 function mountFormUpdate(data) {

@@ -44,6 +44,12 @@ monthElement.onclick = () => {
   monthsElement.classList.add("show");
 };
 
+// Go to today
+document.querySelector(".header #today.today").addEventListener("click", () => {
+  const today = new Date();
+  generateCalendar(today.getMonth(), today.getFullYear());
+});
+
 //Functions
 const isLeapYear = (year) =>
   (year % 4 === 0 && year % 100 !== 0 && year % 400 !== 0) ||

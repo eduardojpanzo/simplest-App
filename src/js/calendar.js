@@ -47,7 +47,9 @@ monthElement.onclick = () => {
 // Go to today
 document.querySelector(".header #today.today").addEventListener("click", () => {
   const today = new Date();
-  generateCalendar(today.getMonth(), today.getFullYear());
+  currentMonth.value = today.getMonth();
+  currentYear.value = today.getFullYear();
+  generateCalendar(currentMonth.value, currentYear.value);
 });
 
 //Functions
@@ -57,47 +59,26 @@ const isLeapYear = (year) =>
 
 const getFebDays = (year) => (isLeapYear(year) ? 29 : 28);
 
+const daysOfMonth = () => [
+  31,
+  getFebDays(year),
+  31,
+  30,
+  31,
+  30,
+  31,
+  31,
+  30,
+  31,
+  30,
+  31,
+];
+
 function generateCalendar(month, year) {
-  const daysElement = document.querySelector(".body .days");
-  const yearElement = document.querySelector("#year");
-  daysElement.innerHTML = "";
-
-  const daysOfMonth = [
-    31,
-    getFebDays(year),
-    31,
-    30,
-    31,
-    30,
-    31,
-    31,
-    30,
-    31,
-    30,
-    31,
-  ];
-
+  document.querySelector("#year").innerHTML = year;
   monthElement.innerHTML = getMonthNames(currentLang)[month];
-  yearElement.innerHTML = year;
 
-  const firstDay = new Date(year, month, 1);
-
-  for (let i = 0; i <= daysOfMonth[month] + firstDay.getDay() - 1; i++) {
-    const day = document.createElement("div");
-    if (i >= firstDay.getDay()) {
-      day.innerHTML = i - firstDay.getDay() + 1;
-      day.classList.add("date");
-      if (
-        i - firstDay.getDay() + 1 === currentDate.getDate() &&
-        year === currentDate.getFullYear() &&
-        month === currentDate.getMonth()
-      ) {
-        day.classList.add("today");
-      }
-    }
-
-    daysElement.appendChild(day);
-  }
+  setDaysInCalendar(month, year);
 }
 
 function getWeekDays(lang = "pt") {
@@ -160,6 +141,30 @@ function setMonthsNames(lang = "pt") {
 
     monthsElement.appendChild(month);
   });
+}
+
+function setDaysInCalendar(month, year) {
+  const daysElement = document.querySelector(".body .days");
+  daysElement.innerHTML = "";
+
+  const firstDay = new Date(year, month, 1);
+
+  for (let i = 0; i <= daysOfMonth()[month] + firstDay.getDay() - 1; i++) {
+    const day = document.createElement("div");
+    if (i >= firstDay.getDay()) {
+      day.innerHTML = i - firstDay.getDay() + 1;
+      day.classList.add("date");
+      if (
+        i - firstDay.getDay() + 1 === currentDate.getDate() &&
+        year === currentDate.getFullYear() &&
+        month === currentDate.getMonth()
+      ) {
+        day.classList.add("today");
+      }
+    }
+
+    daysElement.appendChild(day);
+  }
 }
 
 function changeLang() {

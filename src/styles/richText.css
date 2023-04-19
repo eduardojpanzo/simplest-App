@@ -25,9 +25,11 @@ body {
 .text-editor-header .btn {
   border: none;
   outline: none;
-  background: transparent;
+  background: #adadad;
+  padding: 0.32rem;
   margin-right: 5px;
   cursor: pointer;
+  color: antiquewhite;
 }
 
 .content {

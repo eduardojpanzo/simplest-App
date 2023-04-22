@@ -18,6 +18,9 @@ body {
 }
 
 .text-editor-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: #ecfef1;
   padding: 5px;
 }

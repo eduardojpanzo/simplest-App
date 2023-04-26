@@ -1,17 +1,45 @@
-const elements = document.querySelectorAll(".btn");
+const dataButton = [
+  { data: "bold", classIcon: "fa-bold" },
+  { data: "italic", classIcon: "fa-italic" },
+  { data: "underline", classIcon: "fa-underline" },
+  { data: "insertUnOrderedList", classIcon: "fa-list-ul" },
+  { data: "insertOrderedList", classIcon: "fa-list-ol" },
+  { data: "createLink", classIcon: "fa-link" },
+  { data: "justifyLeft", classIcon: "fa-align-left" },
+  { data: "justifyCenter", classIcon: "fa-align-center" },
+  { data: "justifyRight", classIcon: "fa-align-right" },
+  { data: "justifyFull", classIcon: "fa-align-justify" },
+  { data: "insertImage", classIcon: "fa-image" },
+];
 
-elements.forEach((element) => {
-  element.addEventListener("click", () => {
-    let command = element.dataset["element"];
+const header = document.querySelector("#header.text-editor-header");
 
-    if (command === "createLink" || command === "insertImage") {
-      let url = prompt("Enter the link here!", "http://");
+function handleSetCommand(element) {
+  let command = element.dataset["element"];
 
-      document.execCommand(command, false, url);
+  if (command === "createLink" || command === "insertImage") {
+    let url = prompt("Enter the link here!", "http://");
 
-      return;
-    }
+    document.execCommand(command, false, url);
 
-    document.execCommand(command, false, null);
+    return;
+  }
+
+  document.execCommand(command, false, null);
+}
+
+function generateButtonsElements() {
+  header.innerHTML = "";
+
+  dataButton.map(({ data, classIcon }) => {
+    const buttonElement = `
+      <button class="btn" data-element="${data}" onclick="handleSetCommand(this)">
+        <i class="fa ${classIcon}"></i>
+      </button>
+    `;
+
+    header.innerHTML += buttonElement;
   });
-});
+}
+
+generateButtonsElements();

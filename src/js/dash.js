@@ -64,7 +64,7 @@ function setSideBarItems() {
   sideBarItems.forEach(({ value, icon }, i) => {
     sidebar.querySelector(".items").innerHTML += `
     <li class="nav-link">
-      <i class="icon">${icon}</i>
+      <i class="icon ${icon}"></i>
       <span class="text nav-text">${value}</span>
     </li>
   `;

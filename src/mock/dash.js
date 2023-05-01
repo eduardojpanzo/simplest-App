@@ -18,8 +18,8 @@ const subMenuLinks = [
 ];
 
 const sideBarItems = [
-  { value: "Home", icon: "H" },
-  { value: "Projects", icon: "P" },
-  { value: "Tasks", icon: "T" },
-  { value: "Information", icon: "I" },
+  { value: "Home", icon: "fas fa-home" },
+  { value: "Projects", icon: "fas fa-project-diagram" },
+  { value: "Tasks", icon: "fas fa-tasks" },
+  { value: "Information", icon: "fas fa-info" },
 ];

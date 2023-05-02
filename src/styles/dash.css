@@ -1,38 +1,11 @@
-* {
-  font-family: "Poppins", sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-:root {
-  --body-color: #e4e9f7;
-  --sidebar-color: #fff;
-  --primary-color: #107418;
-  --primary-color-light: #f6f5ff;
-  --toggle-color: #ddd;
-  --text-color: #707070;
-
-  --tran-02: all 0.2s ease;
-  --tran-03: all 0.3s ease;
-  --tran-04: all 0.4s ease;
-  --tran-05: all 0.5s ease;
-}
+@import url("./global.css");
 
 body {
   height: 100vh;
   background: var(--body-color);
-  transition: var(--tran-04);
+  transition: var(--bg);
 }
 
-body.dark {
-  --body-color: #18191a;
-  --sidebar-color: #242526;
-  --primary-color: #34383c;
-  --primary-color-light: #3a383c;
-  --toggle-color: #fff;
-  --text-color: #ccc;
-}
 /* geral--- */
 .text {
   font-size: 1rem;

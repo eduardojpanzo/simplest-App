@@ -4,6 +4,7 @@ body {
   display: flex;
   min-height: 100vh;
   background: var(--yellow);
+  font-family: var(--font-family);
 }
 
 .container-slider {
@@ -33,18 +34,19 @@ body {
   position: absolute;
   width: 40px;
   height: 40px;
-  background-color: #fffc;
+  background: var(--gray-300);
   top: 50%;
   transform: translateY(-50%);
   font-size: 30px;
-  font-weight: bold;
-  font-family: monospace;
-  text-align: center;
   border-radius: 50%;
   cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .slider__btn:hover {
-  background-color: var(--white);
+  background: var(--gray-50);
 }
 .slider__btn--left {
   left: 10px;

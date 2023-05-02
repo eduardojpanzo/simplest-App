@@ -1,11 +1,7 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
+@import url("./global.css");
+
 body {
-  font-family: sans-serif;
-  background: #ebebeb;
+  background: var(--gray-50);
 }
 
 .main-content {
@@ -14,31 +10,31 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19);
+  box-shadow: var(--shadow);
 }
 
 .text-editor-header {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #ecfef1;
-  padding: 5px;
+  background: var(--gray-300);
+  padding: 0.3rem;
 }
 
 .text-editor-header .btn {
   border: none;
   outline: none;
-  background: #adadad;
+  background: var(--gray-500);
   padding: 0.32rem;
   margin-right: 5px;
   cursor: pointer;
-  color: antiquewhite;
+  color: var(--gray-100);
 }
 
 .content {
-  background: #fdfdfd;
+  background: var(--yellow);
   min-height: 200px;
-  border: 1px solid #ecfef1;
+  border: 1px solid var(--gray-100);
   border-top: 0px;
   padding: 20px;
   outline: none;

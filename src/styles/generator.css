@@ -1,14 +1,9 @@
-* {
-  box-sizing: border-box;
-  font-family: sans-serif;
-  margin: 0 auto;
-  width: 100%;
-}
+@import url("./global.css");
 
 body {
   width: 100%;
   height: 100vh;
-  background-color: #181818;
+  background-color: var(--gray-900);
 
   display: flex;
   justify-content: center;
@@ -19,13 +14,23 @@ body {
 .logo {
   max-width: 600px;
   margin-bottom: 24px;
-  color: #fff;
+  color: var(--white);
   font-size: xx-large;
   text-align: center;
 }
-.conatiner-input {
+.container-form {
   max-width: 480px;
   margin: 14px 0;
+}
+
+.container-form .slider {
+  appearance: none;
+  width: 100%;
+  height: 1rem;
+  border-radius: 0.3rem;
+  margin-top: 0.5rem;
+  background: var(--gray-400);
+  outline: none;
 }
 
 .control-form {
@@ -41,34 +46,26 @@ body {
   height: 1.5rem;
 }
 
-.conatiner-input span {
-  color: #fff;
-  font-size: 22px;
+.container-form span {
+  color: var(--white);
+  font-size: 1.4rem;
 }
 
-.slider {
-  appearance: none;
+.button-gena {
   width: 100%;
-  height: 18px;
-  border-radius: 5px;
-  margin-top: 8px;
-  background: #dfdfdf;
-  outline: none;
-}
-.button-cta {
   height: 40px;
-  background-color: #3eb72b;
+  background: var(--green-500);
   border: 0;
-  border-radius: 4px;
-  margin-top: 20px;
-  color: #fff;
+  border-radius: 0.25rem;
+  margin-top: 1.25rem;
+  color: var(--gray-50);
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1.1rem;
   cursor: pointer;
 }
 .container-hash {
   max-width: 480px;
-  margin: 14px 0;
+  margin: 0.9rem 0;
   display: flex;
   flex-direction: column;
   cursor: pointer;
@@ -76,7 +73,7 @@ body {
 
 .title {
   text-align: center;
-  color: #fff;
+  color: var(--gray-50);
   font-size: 20px;
   margin-top: 10px;
   margin-bottom: 8px;
@@ -84,13 +81,13 @@ body {
 
 .hash {
   height: 60px;
-  background-color: #0008;
-  border-radius: 4px;
+  background: var(--gray-900);
+  border-radius: 0.4rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;
-  border: 1px solid #313131;
+  color: var(--white);
+  border: 1px solid var(--gray-800);
   transition: transform 0.5s;
 }
 
@@ -99,11 +96,11 @@ body {
 }
 
 .tooltip {
-  color: #0f0;
+  color: var(--green-500);
   position: relative;
   top: 20px;
   padding: 6px 8px;
-  background: rgba(15, 15, 15, 1);
+  background: var(--gray-800);
   text-align: center;
   font-size: 16px;
   border-radius: 6px;

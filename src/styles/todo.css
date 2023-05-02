@@ -1,43 +1,5 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: sans-serif;
-}
+@import url("./global.css");
 
-:root {
-  --text-primary: #22252d;
-  --text-secondary: #262933;
-
-  --bg: #c0c0c0;
-  --bg-primary: #ffffff;
-  --bg-secondary: #f4f3f4;
-  --bg-third: #f7f7f7;
-  --bg-trasparent: rgba(255, 255, 255, 0.7);
-
-  --transparent: rgba(0, 0, 0, 0.2);
-
-  --red: #eb6666;
-  --blue: #26a8fe;
-  --green: #2da30f;
-}
-
-.darkMode:root {
-  --text-primary: #fff;
-  --text-secondary: #c4c4cc;
-
-  --bg: #323232;
-  --bg-primary: #22252d;
-  --bg-secondary: #292d36;
-  --bg-third: #262933;
-  --bg-trasparent: rgba(0, 0, 0, 0.7);
-
-  --transparent: rgba(0, 0, 0, 0.2);
-
-  --red: #eb6666;
-  --blue: #26a8fe;
-  --green: #26fed7;
-}
 body {
   background: var(--bg);
 }
@@ -124,13 +86,13 @@ button.btn:hover {
   font-weight: 700;
 }
 .dones {
-  color: var(--green);
+  color: var(--green-500);
 }
 .process {
-  color: var(--blue);
+  color: var(--blue-200);
 }
 .backlog {
-  color: var(--red);
+  color: var(--red-500);
 }
 
 .content-items {

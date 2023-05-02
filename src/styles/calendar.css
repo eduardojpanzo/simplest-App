@@ -1,38 +1,4 @@
-:root {
-  --bg-body: #4d4c5a;
-  --bg-main: #141529;
-  --bg-second: #79788c;
-  --color-hover: #323048;
-  --color-text: #f8fbff;
-
-  --blue: #00f;
-  --white: #fff;
-
-  --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-
-  --font-family: "Roboto", sans-serif;
-}
-
-.light:root {
-  --bg-body: #f3f8fe;
-  --bg-main: #fdfdfd;
-  --bg-second: #c3c2c8;
-  --color-hover: #edf0f5;
-  --color-text: #151426;
-
-  --blue: #00f;
-  --white: #fff;
-
-  --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-
-  --font-family: "Roboto", sans-serif;
-}
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
+@import url("./global.css");
 
 html,
 body {
@@ -40,14 +6,15 @@ body {
   display: grid;
   place-items: center;
   font-family: var(--font-family);
-  background-color: var(--bg-body);
-  color: var(--color-text);
+  background-color: var(--bg);
+  color: var(--text-primary);
+  transition: var(--tran-04);
 }
 
 .calendar {
   height: max-content;
   width: max-content;
-  background-color: var(--bg-main);
+  background-color: var(--bg-primary);
   border-radius: 30px;
   padding: 1.25rem;
   position: relative;
@@ -60,7 +27,7 @@ body {
   align-items: center;
   font-size: 1.56rem;
   font-weight: 600;
-  color: var(--color-text);
+  color: var(--text-primary);
   padding: 0.625rem;
   user-select: none;
 }
@@ -79,7 +46,8 @@ body {
 
 .header .today:hover,
 .month:hover {
-  background-color: var(--color-hover);
+  background-color: var(--blue-hover);
+  color: var(--white);
 }
 
 .year {
@@ -97,7 +65,8 @@ body {
   cursor: pointer;
 }
 .change:hover {
-  background-color: var(--color-hover);
+  background-color: var(--blue-hover);
+  color: var(--white);
 }
 
 .body {
@@ -114,7 +83,7 @@ body {
 .weekdays div {
   display: grid;
   place-items: center;
-  color: var(--bg-second);
+  color: var(--text-secondary);
 }
 
 .days {
@@ -122,7 +91,7 @@ body {
   min-height: 258px;
   grid-template-columns: repeat(7, 1fr);
   gap: 2px;
-  color: var(--color-text);
+  color: var(--text-primary);
 }
 
 .days div {
@@ -140,13 +109,13 @@ body {
 }
 
 .days div.today {
-  background-color: var(--blue);
+  background: var(--blue-500);
   color: var(--white);
 }
 
 .days div.date:not(.today):hover {
   filter: brightness(0.6);
-  background-color: var(--color-hover);
+  background: var(--bg-third);
 }
 
 .footer {
@@ -167,7 +136,7 @@ body {
   width: 3rem;
   height: 1.56225rem;
   border-radius: 0.875rem;
-  background-color: var(--bg-second);
+  background: var(--text-secondary);
   cursor: pointer;
 }
 
@@ -175,7 +144,7 @@ body {
   width: 1.3125rem;
   height: 1.3125rem;
   border-radius: 50%;
-  background-color: var(--bg-main);
+  background: var(--bg-secondary);
   position: absolute;
   top: 2px;
   left: calc(2px + 50%);
@@ -193,9 +162,9 @@ body {
   height: 100%;
   top: 0;
   left: 0;
-  background-color: var(--bg-main);
+  background-color: var(--bg-primary);
   padding: 1.25rem;
-  color: var(--color-text);
+  color: var(--text-primary);
   display: grid;
   grid-template-columns: repeat(3, auto);
   gap: 5px;
@@ -227,7 +196,8 @@ body {
 }
 
 .months > div > div:hover {
-  background-color: var(--color-hover);
+  background: var(--blue-hover);
+  color: var(--white);
 }
 
 @keyframes to-top {

@@ -1,10 +1,9 @@
-* {
-  box-sizing: border-box;
-}
+@import url("./global.css");
+
 body {
   display: flex;
   min-height: 100vh;
-  background: #efc076;
+  background: var(--yellow);
 }
 
 .container-slider {
@@ -12,7 +11,7 @@ body {
   max-width: 900px;
   margin: auto;
   overflow: hidden;
-  box-shadow: 0 0 0 10px #fff, 0 15px 50px;
+  box-shadow: 0 0 0 10px var(--white), 0 15px 50px;
   position: relative;
 }
 .slider {
@@ -45,7 +44,7 @@ body {
   cursor: pointer;
 }
 .slider__btn:hover {
-  background-color: #fff;
+  background-color: var(--white);
 }
 .slider__btn--left {
   left: 10px;

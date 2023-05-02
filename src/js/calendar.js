@@ -14,7 +14,7 @@ let currentYear = { value: currentDate.getFullYear() };
 
 /*Theme Swicth*/
 document.querySelector(".switch.theme").addEventListener("click", () => {
-  document.querySelector("html").classList.toggle("light");
+  document.querySelector("html").classList.toggle("dark");
   document.querySelector(".theme .switch-indent").classList.toggle("active");
 });
 

@@ -42,7 +42,7 @@ btnToggleModal.forEach((el) =>
 );
 
 function toggleTheme(e) {
-  const isdark = document.querySelector("html").classList.toggle("darkMode");
+  const isdark = document.querySelector("body").classList.toggle("dark");
   isdark
     ? (e.currentTarget.innerHTML = svgLight)
     : (e.currentTarget.innerHTML = svgDark);

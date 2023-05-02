@@ -1,14 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-:root {
-  --blue-500: blue;
-  --blueviolet-500: blueviolet;
-}
+@import url("./global.css");
 
 .mainHome .container {
   width: 525px;
@@ -35,7 +25,7 @@
   justify-content: center;
   width: 15rem;
   height: 7rem;
-  border: 1px solid rgba(187, 187, 187, 0.432);
+  border: 1px solid var(--bg);
   border-radius: 1rem;
   color: var(--blue-500);
   font-size: 1.2rem;

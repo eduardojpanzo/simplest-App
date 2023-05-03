@@ -7,3 +7,88 @@ body {
   transition: var(--tran-03);
   font-size: 1rem;
 }
+
+.main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 1rem;
+}
+
+.sidebar {
+  width: 16rem;
+  height: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--bg-third);
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+.user-content {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+.user-img {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: var(--bg-primary);
+  overflow: hidden;
+}
+.user-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.menu-items {
+  flex: 1;
+
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.62rem;
+}
+
+.menu-items .item,
+.switch-theme {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.62rem;
+  border-radius: 0.4rem;
+  border: 1px solid transparent;
+  font-weight: 400;
+  cursor: pointer;
+  transition: var(--tran-03);
+}
+.item i {
+  font-size: larger;
+}
+
+.menu-items .item:hover,
+.switch-theme:hover {
+  background: var(--bg-primary);
+  border: 1px solid var(--gray-300);
+}
+
+.switch-theme {
+  justify-content: space-between;
+}
+
+.switch-theme .sun,
+.dark .switch-theme .moon {
+  display: none;
+}
+.switch-theme .moon,
+.dark .switch-theme .sun {
+  display: inline;
+}
+
+.main-content {
+  flex: 1;
+}

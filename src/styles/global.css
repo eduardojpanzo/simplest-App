@@ -5,8 +5,8 @@
   --text-secondary: #262933;
   --bg: #c0c0c0;
   --bg-primary: #ffffff;
-  --bg-secondary: #f4f3f4;
-  --bg-third: #f7f7f7;
+  --bg-secondary: #f0f0f0;
+  --bg-third: #e2e2e2;
   --bg-trasparent: rgba(255, 255, 255, 0.7);
   --transparent: rgba(0, 0, 0, 0.2);
 
@@ -47,10 +47,10 @@
 .dark:root {
   --text-primary: #fff;
   --text-secondary: #c4c4cc;
-  --bg: #262933;
+  --bg: #0d0d0e;
   --bg-primary: #141529;
   --bg-secondary: #2e2d33;
-  --bg-third: #464547;
+  --bg-third: #222222;
   --bg-trasparent: rgba(0, 0, 0, 0.7);
   --transparent: rgba(0, 0, 0, 0.2);
 }
@@ -65,4 +65,11 @@
 html,
 body {
   font-family: var(--font-family);
+  color: var(--text-primary);
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
 }

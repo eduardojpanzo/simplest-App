@@ -7,67 +7,79 @@
     <meta http-equiv="X-UA-Compatible" content="IE=7" />
     <meta name="description" content="static Dashboard" />
     <link rel="stylesheet" href="../fonts/css/all.css" />
-    <link rel="stylesheet" href="../styles/global.css" />
     <link rel="stylesheet" href="../styles/dash.css" />
     <title>Dashboard</title>
   </head>
   <body>
-    <header>
-      <div class="topBar">
-        <div class="imagotipo"></div>
-
-        <div class="user-pic" onclick="toggleShowSubMenu()">
-          <img src="img" alt="user" />
-        </div>
-
-        <div class="sub-menu-wrap" id="subMenu">
-          <div class="sub-menu">
-            <div class="user-info"></div>
-            <hr />
-
-            <div class="links"></div>
-          </div>
-        </div>
-      </div>
-    </header>
-
     <main>
-      <nav class="sidebar">
-        <div class="toggle">
-          <i>&gt;</i>
+      <aside class="sidebar">
+        <div class="user-content">
+          <div class="user-img">
+            <img src="https://github.com/EduardoPanzo.png" alt="user" />
+          </div>
+          <div class="user-info">
+            <em>EduardoPanzo</em>
+            <em>eduardo@email.com</em>
+          </div>
         </div>
 
-        <div class="menu-bar">
-          <div class="menu">
-            <li class="search-box">
-              <i class="icon fas fa-search"></i>
-              <input type="search" placeholder="Search..." />
-            </li>
+        <ul class="menu-items">
+          <li class="item">
+            <i class="fas fa-clock"></i>
+            <span>Recent Files</span>
+          </li>
 
-            <ul class="items"></ul>
+          <li class="item">
+            <i class="fas fa-clock"></i>
+            <span>Recent Files</span>
+          </li>
+
+          <li class="item">
+            <i class="fas fa-clock"></i>
+            <span>Recent Files</span>
+          </li>
+        </ul>
+
+        <div class="switch-theme">
+          <div class="icon">
+            <i class="fas fa-sun"></i>
+            <i class="fas fa-moon"></i>
           </div>
 
-          <di class="bottom-content">
-            <li class="mode">
-              <div class="moon-sun">
-                <i class="icon moon fas fa-moon"></i>
-                <i class="icon sun fas fa-sun"></i>
-              </div>
-              <span class="mode-text text">Dark Mode</span>
-
-              <div class="toggle-switch">
-                <span class="switch"></span>
-              </div>
-            </li>
-          </di>
+          <div class="text">
+            <span class="moon">Dark</span>
+            <span class="sun">Light</span>
+          </div>
         </div>
-      </nav>
+      </aside>
 
-      <section class="page-place">
-        <h2 class="title">Dashboard</h2>
+      <section class="main-content">
+        <div class="filter-input">
+          <i class="fas fa-search"></i>
+          <input type="search" name="search" id="search" />
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>File Name</th>
+              <th>Upload At</th>
+              <th>Kind</th>
+              <th>Size</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>City</td>
+              <td>Last Month</td>
+              <td>PNG image</td>
+              <td>156 KB</td>
+            </tr>
+          </tbody>
+        </table>
       </section>
     </main>
-
     <script src="../mock/dash.js"></script>
     <script src="../js/dash.js"></script>
   </body>

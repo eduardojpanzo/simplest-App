@@ -56,28 +56,53 @@
       <section class="main-content">
         <div class="filter-input">
           <i class="fas fa-search"></i>
-          <input type="search" name="search" id="search" />
+          <input type="search" name="search" id="search" placeholder="Search" />
+
+          <select name="type" id="type">
+            <option value="last">Last Upload</option>
+            <option value="firt">Firt Upload</option>
+            <option value="name">Name</option>
+            <option value="Size">Size</option>
+          </select>
         </div>
 
-        <table>
-          <thead>
-            <tr>
-              <th>File Name</th>
-              <th>Upload At</th>
-              <th>Kind</th>
-              <th>Size</th>
-            </tr>
-          </thead>
+        <div class="table">
+          <table>
+            <thead>
+              <tr>
+                <th>File Name</th>
+                <th>Upload At</th>
+                <th>Kind</th>
+                <th>Size</th>
+              </tr>
+            </thead>
 
-          <tbody>
-            <tr>
-              <td>City</td>
-              <td>Last Month</td>
-              <td>PNG image</td>
-              <td>156 KB</td>
-            </tr>
-          </tbody>
-        </table>
+            <tbody>
+              <tr>
+                <td>City</td>
+                <td>Last Month</td>
+                <td>PNG image</td>
+                <td>156 KB</td>
+              </tr>
+              <tr>
+                <td>Day 1333 App dashbords</td>
+                <td>Just Now</td>
+                <td>InVision Studio</td>
+                <td>2 MB</td>
+              </tr>
+              <tr>
+                <td>plus_icon</td>
+                <td>Yestrday</td>
+                <td>SVG</td>
+                <td>22 KB</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <button class="float-button-add">
+          <i class="fas fa-plus"></i>
+        </button>
       </section>
     </main>
     <script src="../mock/dash.js"></script>

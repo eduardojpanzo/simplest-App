@@ -89,6 +89,84 @@ body {
   display: inline;
 }
 
+/* MAIN CONTENT FILTER TABLE */
+
 .main-content {
+  position: relative;
   flex: 1;
+  max-width: calc(100% - 16rem);
+  padding: 1.5rem;
+}
+
+.filter-input {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 1.2rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--gray-300);
+  color: var(--gray-400);
+  font-weight: lighter;
+}
+
+.filter-input input,
+.filter-input select {
+  border: none;
+  background: transparent;
+  outline: none;
+  color: var(--text-primary);
+}
+
+.filter-input input {
+  flex: 1;
+}
+
+.table {
+  max-width: 100%;
+  overflow-x: auto;
+}
+table {
+  width: 100%;
+  min-width: 30rem;
+  border-spacing: 0 0.5rem;
+}
+thead th {
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: left;
+  padding-bottom: 1rem;
+}
+tbody tr:hover {
+  background: var(--bg-third);
+  cursor: pointer;
+}
+tbody td {
+  font-size: medium;
+  padding: 0.62rem;
+}
+tbody td:first-child {
+  border-top-left-radius: 0.4rem;
+  border-bottom-left-radius: 0.4rem;
+}
+tbody td:last-child {
+  border-top-right-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
+}
+
+.float-button-add {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background: var(--blue-600);
+  color: var(--white);
+  font-weight: lighter;
+  font-size: x-large;
+  cursor: pointer;
 }

@@ -1,25 +1,52 @@
-const logo = {
-  src: "",
-  alt: "",
-};
+const userContentInner = `
+  <div class="user-img">
+    <img src="https://github.com/EduardoPanzo.png" alt="user" />
+  </div>
+  <div class="user-info">
+    <span>EduardoPanzo</span>
+    <em>eduardo@email.com</em>
+  </div>
+`;
 
-const userData = {
-  name: "John Doe",
-  img: "",
-  company: {
-    name: "Dline-code",
-    office: "Dev Front-End",
-  },
-};
+const toggleThemeInner = `
+  <div>
+    <i class="fas fa-sun sun"></i>
+    <i class="fas fa-moon moon"></i>
+  </div>
+  <div>
+    <span class="sun">Light</span>
+    <span class="moon">Dark</span>
+  </div>
+`;
 
-const subMenuLinks = [
-  { value: "Edit Profile", path: "/dash/edit.html", icon: "" },
-  { value: "Out", path: "index.html", icon: "" },
+const sideBarMenuItems = [
+  { value: "Recent Files", iconClass: "fas fa-clock", goTo: () => {} },
+  { value: "Documents", iconClass: "fas fa-project-diagram", goTo: () => {} },
+  { value: "Images", iconClass: "fas fa-tasks", goTo: () => {} },
+  { value: "Video", iconClass: "fas fa-info", goTo: () => {} },
+  { value: "Audio", iconClass: "fas fa-info", goTo: () => {} },
 ];
 
-const sideBarItems = [
-  { value: "Home", icon: "fas fa-home" },
-  { value: "Projects", icon: "fas fa-project-diagram" },
-  { value: "Tasks", icon: "fas fa-tasks" },
-  { value: "Information", icon: "fas fa-info" },
+const tableBodyData = [
+  {
+    key: 1,
+    name: "City",
+    uploadAt: "Last Month",
+    ext: "PNG image",
+    size: "156 KB",
+  },
+  {
+    key: 2,
+    name: "Day 1333 App dashbords",
+    uploadAt: "Just Now",
+    ext: "InVision Studio",
+    size: "2 MB",
+  },
+  {
+    key: 3,
+    name: "plus_icon",
+    uploadAt: "Yestrday",
+    ext: "SVG",
+    size: "22 KB",
+  },
 ];

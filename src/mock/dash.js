@@ -20,11 +20,11 @@ const toggleThemeInner = `
 `;
 
 const sideBarMenuItems = [
-  { value: "Recent Files", iconClass: "fas fa-clock", goTo: () => {} },
-  { value: "Documents", iconClass: "fas fa-project-diagram", goTo: () => {} },
-  { value: "Images", iconClass: "fas fa-tasks", goTo: () => {} },
-  { value: "Video", iconClass: "fas fa-info", goTo: () => {} },
-  { value: "Audio", iconClass: "fas fa-info", goTo: () => {} },
+  { value: "Recent Files ", iconClass: "fas fa-clock", goTo: () => {} },
+  { value: "Images ", iconClass: "fas fa-images", goTo: () => {} },
+  { value: "Video ", iconClass: "fas fa-video", goTo: () => {} },
+  { value: "Audio ", iconClass: "fas fa-music", goTo: () => {} },
+  { value: "Others ", iconClass: "fas fa-file", goTo: () => {} },
 ];
 
 const tableBodyData = [

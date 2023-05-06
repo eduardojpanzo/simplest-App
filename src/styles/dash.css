@@ -59,7 +59,7 @@ body {
 .switch-theme {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.5rem;
   padding: 0.62rem;
   border-radius: 0.4rem;
   border: 1px solid transparent;

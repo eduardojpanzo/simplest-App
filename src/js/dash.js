@@ -1,5 +1,29 @@
+const modalOverlay = document.querySelector(".modal-overlay");
+
+document.addEventListener("keydown", (e) => {
+  if (e.code === "Escape" && isModalOpen()) {
+    closeModal();
+  }
+});
+
+function createNewUpload() {
+  OpenModal();
+}
+
 function toggleTheme() {
   document.querySelector("html").classList.toggle("dark");
+}
+
+function OpenModal() {
+  modalOverlay.classList.add("open");
+}
+
+function closeModal() {
+  modalOverlay.classList.remove("open");
+}
+
+function isModalOpen() {
+  return modalOverlay.classList.contains("open");
 }
 
 function setMenuItems() {

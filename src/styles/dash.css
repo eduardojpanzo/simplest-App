@@ -171,3 +171,43 @@ tbody td:last-child {
   font-size: x-large;
   cursor: pointer;
 }
+
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--bg-trasparent);
+}
+
+.modal-overlay.open {
+  display: flex;
+}
+
+.modal-overlay .modal-close {
+  height: 2.375rem;
+  width: 2.375rem;
+  padding: 0.6rem;
+  margin: 2rem auto;
+  border-radius: 100px;
+  box-shadow: var(--shadow);
+  background: transparent;
+  font-size: 1.25rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.modal-overlay .modal-content {
+  max-width: 100%;
+  width: max-content;
+  height: max-content;
+  margin: 0 auto;
+  padding: 0.62rem;
+  border: 1px solid var(--gray-100);
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow);
+  background: var(--bg-primary);
+  transition: var(--tran-05);
+  overflow: hidden;
+}

@@ -28,14 +28,35 @@ body {
   overflow-y: auto;
 }
 .user-content {
+  position: relative;
   display: flex;
   gap: 0.5rem;
   align-items: center;
+  padding: 0.5rem;
   margin-bottom: 5rem;
+  border-radius: 0.4rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+.user-content:hover {
+  background: var(--bg-primary);
+  border: 1px solid var(--gray-300);
+  color: var(--text-secondary);
+}
+.user-content:hover .user-edit {
+  opacity: 1;
+}
+.user-edit {
+  opacity: 0;
+  position: absolute;
+  top: 0.3rem;
+  right: 0.3rem;
+  transition: var(--tran-05);
+  color: var(--blue-200);
 }
 .user-img {
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 3.25rem;
+  height: 3.25rem;
   border-radius: 50%;
   background: var(--bg-primary);
   overflow: hidden;

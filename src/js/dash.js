@@ -7,6 +7,18 @@ document.addEventListener("keydown", (e) => {
 });
 
 function createNewUpload() {
+  modalOverlay.querySelector(".modal-content").innerHTML = `
+    Criar New upload!
+  `;
+
+  OpenModal();
+}
+
+function handleEditUser() {
+  modalOverlay.querySelector(".modal-content").innerHTML = `
+    Edit User!
+  `;
+
   OpenModal();
 }
 

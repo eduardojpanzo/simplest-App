@@ -6,6 +6,9 @@ const userContentInner = `
     <span>EduardoPanzo</span>
     <em>eduardo@email.com</em>
   </div>
+  <div class="user-edit">
+    <i class="fas fa-edit"></i>
+  </div>
 `;
 
 const toggleThemeInner = `

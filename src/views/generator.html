@@ -1,53 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gerador de Hash</title>
     <link rel="stylesheet" href="../styles/generator.css" />
+    <link rel="stylesheet" href="../fonts//css/all.css" />
   </head>
   <body>
-    <h1 class="logo">Gerador de Hash</h1>
+    <main class="generator-main">
+      <h1 class="logo">G<span>H</span></h1>
 
-    <form class="container-form" id="form">
-      <div>
-        <span>Tamanho da Hash: <span id="lenght"></span></span>
-        <input
-          id="slider"
-          class="slider"
-          type="range"
-          min="5"
-          max="25"
-          value="15"
-        />
+      <form class="container-form" id="form">
+        <div>
+          <span>Tamanho da Hash: <span id="lenght"></span></span>
+          <input
+            id="slider"
+            class="slider"
+            type="range"
+            min="5"
+            max="25"
+            value="15"
+          />
+        </div>
+
+        <div class="options">
+          <div class="control-form">
+            <input type="checkbox" name="letters" id="letters" />
+            <i>a-z A-Z</i>
+          </div>
+
+          <div class="control-form">
+            <input type="checkbox" name="numbers" id="numbers" />
+            <i>0-9</i>
+          </div>
+
+          <div class="control-form">
+            <input type="checkbox" name="symbols" id="symbols" />
+            <i class="fab fa-slack-hash"></i>
+          </div>
+        </div>
+
+        <button type="submit" id="button" class="button-gena">
+          Gerar uma Hash
+        </button>
+      </form>
+
+      <div id="container-hash" class="container-hash hide">
+        <span class="title">Clique na Hash gerada para copiar! </span>
+        <span class="hash" id="hash"></span>
+        <span class="tooltip">Copiado ✔</span>
       </div>
-
-      <div class="control-form">
-        <input type="checkbox" name="letters" id="letters" />
-        <span>Incluir Letras [a-z;A-Z]</span>
-      </div>
-
-      <div class="control-form">
-        <input type="checkbox" name="numbers" id="numbers" />
-        <span>Incluir Numeros [0-9]</span>
-      </div>
-
-      <div class="control-form">
-        <input type="checkbox" name="symbols" id="symbols" />
-        <span>Incluir Símbolos</span>
-      </div>
-
-      <button type="submit" id="button" class="button-gena">
-        Gerar uma Hash
-      </button>
-    </form>
-
-    <div id="container-hash" class="container-hash hide">
-      <span class="title">Clique na Hash gerada para copiar! </span>
-      <span class="hash" id="hash"></span>
-      <span class="tooltip">Copiado ✔</span>
-    </div>
+    </main>
 
     <script src="../js/generator.js"></script>
   </body>

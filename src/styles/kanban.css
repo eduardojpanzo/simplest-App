@@ -67,6 +67,7 @@ main {
   padding: 0.5rem;
   border-top: 0.15rem solid transparent;
   background: var(--gray-300);
+  user-select: none;
 }
 .item.high .item-header {
   border-color: var(--red-500);

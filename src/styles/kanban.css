@@ -1,1 +1,19 @@
 @import url("./global.css");
+
+header {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.62rem;
+  margin-bottom: 2rem;
+}
+header h1 {
+  position: relative;
+}
+header h1 span {
+  position: relative;
+  left: -0.74rem;
+  color: var(--blue-500);
+}

@@ -23,7 +23,7 @@
   --red-500: #eb6666;
 
   --blue-200: #26a8fe;
-  --blue-500: blue;
+  --blue-500: #5274f9;
   --blue-600: #0202f5;
   --blue-hover: #323048;
   --blueviolet-500: blueviolet;
@@ -64,6 +64,7 @@
 
 html,
 body {
+  background: var(--bg-primary);
   font-family: var(--font-family);
   color: var(--text-primary);
 }

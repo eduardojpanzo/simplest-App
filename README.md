@@ -17,3 +17,7 @@ filtrar productos através de uma barra de pesquisa, a cada dígito
 ## DashBoard
 
 ## ToDo
+
+## RichText
+
+## kanban

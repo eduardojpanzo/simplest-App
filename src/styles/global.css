@@ -20,17 +20,20 @@
 
   --white: #fff;
 
-  --red-500: #eb6666;
-
   --blue-200: #26a8fe;
   --blue-500: #5274f9;
   --blue-600: #0202f5;
   --blue-hover: #323048;
   --blueviolet-500: blueviolet;
 
+  --green-300: #45cdbf;
   --green-500: #2da30f;
 
   --yellow: #efc076;
+  --yellow-400: #f0bb00;
+
+  --red-500: #eb6666;
+  --red-600: #ef6081;
 
   --gray-50: #f9fafb;
   --gray-100: #f3f4f6;

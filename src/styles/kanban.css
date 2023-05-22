@@ -74,8 +74,8 @@ main {
   color: var(--red-500);
 }
 .item.medium .item-header {
-  border-color: var(--yellow-400);
-  color: var(--yellow-400);
+  border-color: var(--orange-500);
+  color: var(--orange-500);
 }
 .item.low .item-header {
   border-color: var(--green-300);

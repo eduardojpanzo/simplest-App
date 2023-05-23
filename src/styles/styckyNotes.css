@@ -1,0 +1,28 @@
+@import url("./global.css");
+
+.grid {
+  display: grid;
+  width: 100vw;
+  max-width: 1400px;
+  height: 100vh;
+  margin: 0 auto;
+
+  grid-template-areas:
+    " header header "
+    "aside content ";
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: 50px 1fr;
+}
+
+.header {
+  grid-area: header;
+  border: 1px solid #195706;
+}
+.aside {
+  grid-area: aside;
+  border: 1px solid coral;
+}
+.content {
+  grid-area: content;
+  border: 1px solid #50ffe88c;
+}

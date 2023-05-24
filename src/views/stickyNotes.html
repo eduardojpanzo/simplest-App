@@ -1,17 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>sticky notes</title>
     <link rel="stylesheet" href="../styles/styckyNotes.css" />
+    <link rel="stylesheet" href="../fonts/css/all.css" />
   </head>
   <body>
     <div class="grid">
-      <header class="header">header</header>
+      <header class="header">
+        <h1 class="logo">SN</h1>
+
+        <button class="btn">
+          <i class="fas fa-plus"></i>
+          New Sticky
+        </button>
+      </header>
       <aside class="aside">Aside</aside>
-      <main class="content">cpntent</main>
+      <main class="content">
+        <div class="sticky-item">
+          <div class="sticky-header">
+            <h3>title</h3>
+            <i class="fas fa-times"></i>
+          </div>
+          <div class="sticky-body" contenteditable="true">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima,
+            cupiditate dolorem alias velit inventore id ipsam tempora maiores
+            fugiat debitis?
+          </div>
+          <div class="sticky-footer">
+            <button class="sticky-btn"><i class="fas fa-bold"></i></button>
+            <button class="sticky-btn"><i class="fas fa-italic"></i></button>
+            <button class="sticky-btn"><i class="fas fa-underline"></i></button>
+            <button class="sticky-btn"><i class="fas fa-list-ul"></i></button>
+            <button class="sticky-btn">
+              <i class="fas fa-align-left"></i>
+            </button>
+            <button class="sticky-btn">
+              <i class="fas fa-align-center"></i>
+            </button>
+            <button class="sticky-btn">
+              <i class="fas fa-align-right"></i>
+            </button>
+            <button class="sticky-btn">
+              <i class="fas fa-align-justify"></i>
+            </button>
+          </div>
+        </div>
+      </main>
     </div>
   </body>
 </html>

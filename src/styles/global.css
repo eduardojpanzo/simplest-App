@@ -79,3 +79,11 @@ img {
   max-height: 100%;
   object-fit: cover;
 }
+
+button {
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  outline: none;
+}

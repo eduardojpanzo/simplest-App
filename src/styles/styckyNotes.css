@@ -57,9 +57,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 0.2rem;
+  padding: 0.2rem;
   background: var(--gray-300);
   font-size: small;
+  cursor: grab;
+}
+
+.sticky-header button {
+  cursor: pointer;
 }
 .sticky-body {
   min-height: 100px;

@@ -11,7 +11,7 @@ function createNewUpload() {
     Criar New upload!
   `;
 
-  OpenModal();
+  openModal();
 }
 
 function handleEditUser() {
@@ -19,14 +19,14 @@ function handleEditUser() {
     Edit User!
   `;
 
-  OpenModal();
+  openModal();
 }
 
 function toggleTheme() {
   document.querySelector("html").classList.toggle("dark");
 }
 
-function OpenModal() {
+function openModal() {
   modalOverlay.classList.add("open");
 }
 

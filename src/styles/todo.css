@@ -135,29 +135,6 @@ button.btn:hover {
   color: var(--text-secondary);
 }
 
-/*modal component*/
-.todo .modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: var(--bg-trasparent);
-  color: var(--text-primary);
-
-  display: none;
-  align-items: center;
-  justify-content: center;
-}
-.todo .modal-overlay.modal-show {
-  display: flex;
-}
-.modal-content {
-  width: 350px;
-
-  max-width: 350px;
-  min-height: 300px;
-  box-shadow: 0 0 10px var(--transparent);
-  background: var(--bg-primary);
-  border-radius: 1rem;
-}
 .modal-content .todo-preview {
   padding: 1rem;
 }

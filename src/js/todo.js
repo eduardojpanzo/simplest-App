@@ -49,23 +49,30 @@ function toggleTheme(e) {
 }
 
 function handleToggleShowCreateTodoModal() {
-  toggleShowModal()
-    ? (modalOverlay.querySelector(".modal-content").innerHTML =
-        createTodoModalFrame)
-    : (modalOverlay.querySelector(".modal-content").innerHTML = "");
+  modalOverlay.querySelector(".modal-content").innerHTML = createTodoModalFrame;
+
+  openModal();
 }
 
 function handleToggleShowUpdateTodoModal(id) {
   const data = todos.filter((item) => item.id === id)[0];
 
-  toggleShowModal()
-    ? (modalOverlay.querySelector(".modal-content").innerHTML =
-        mountFormUpdate(data))
-    : (modalOverlay.querySelector(".modal-content").innerHTML = "");
+  modalOverlay.querySelector(".modal-content").innerHTML =
+    mountFormUpdate(data);
+
+  openModal();
 }
 
-function toggleShowModal() {
-  return modalOverlay.classList.toggle("modal-show");
+function openModal() {
+  modalOverlay.classList.add("open");
+}
+
+function closeModal() {
+  modalOverlay.classList.remove("open");
+}
+
+function isModalOpen() {
+  return modalOverlay.classList.contains("open");
 }
 
 function handlecreateTodo(e) {
@@ -116,7 +123,7 @@ function handleDeleteTodo(id) {
 
 function ChangeStorge(data) {
   localStorage.setItem("todoData", JSON.stringify(data));
-  toggleShowModal();
+  closeModal();
   document.location.reload(true);
 }
 

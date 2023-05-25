@@ -1,4 +1,17 @@
+const modalOverlay = document.querySelector(".modal-overlay");
 const content = document.querySelector("main .content");
+
+function openModal() {
+  modalOverlay.classList.add("open");
+}
+
+function closeModal() {
+  modalOverlay.classList.remove("open");
+}
+
+function isModalOpen() {
+  return modalOverlay.classList.contains("open");
+}
 
 function mountTheBoxes() {
   const boxes = kabanBoxesData
@@ -14,7 +27,7 @@ function mountTheBoxes() {
         <div class="box-content">
         </div>
 
-        <div class="box-add">
+        <div class="box-add" onclick="openModal()">
         <i class="fas fa-plus-circle"></i>
         Add Item
         </div>

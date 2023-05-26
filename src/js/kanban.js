@@ -13,6 +13,7 @@ function isModalOpen() {
   return modalOverlay.classList.contains("open");
 }
 
+// Kanban Box
 function mountTheBoxes() {
   const boxes = kabanBoxesData
     .map(
@@ -39,6 +40,41 @@ function mountTheBoxes() {
   content.innerHTML = boxes;
 }
 
+function openCreateBox() {
+  modalOverlay.querySelector(".modal-content").innerHTML = formCreateBox();
+
+  openModal();
+}
+
+function handleCreateBox(e) {
+  e.preventDefault();
+
+  const newBox = {
+    id: Math.random().toFixed(3) * 100,
+    title: e.target.title.value,
+  };
+
+  kabanBoxesData = [...kabanBoxesData, newBox];
+
+  setKabanBox(kabanBoxesData);
+  init();
+  closeModal();
+}
+
+function handleDeleteBox(id) {
+  const data = kabanBoxesData.filter((box) => box.id !== id);
+  const itemData = kabanItemsData.filter((item) => item.boxId !== id);
+
+  setKabanBox(data);
+  setKabanItem(itemData);
+  init();
+}
+
+function setKabanBox(data) {
+  localStorage.setItem("kabanBoxesData", JSON.stringify(data));
+}
+
+// Item of kanbanBox
 function mountTheBoxesItems() {
   const boxes = content.querySelectorAll(".box");
 
@@ -73,8 +109,6 @@ function openCreateItem(boxId) {
   modalOverlay.querySelector(".modal-content").innerHTML =
     formCreateItem(boxId);
 
-  console.log(boxId);
-
   openModal();
 }
 
@@ -87,13 +121,25 @@ function handleCreateItem(e) {
     level: e.target.level.value,
     content: e.target.content.value.trim(),
     boxId: Number(e.target.boxId.value),
-    date: new Date().getDate(),
+    date: new Date().toLocaleDateString(),
   };
 
   kabanItemsData = [...kabanItemsData, newItem];
 
+  setKabanItem(kabanItemsData);
   init();
   closeModal();
+}
+
+function handleDeleteKanbanItem(id) {
+  const data = kabanItemsData.filter((item) => item.id !== id);
+
+  setKabanItem(data);
+  init();
+}
+
+function setKabanItem(data) {
+  localStorage.setItem("kabanItemsData", JSON.stringify(data));
 }
 
 function init() {

@@ -27,7 +27,7 @@ function mountTheBoxes() {
         <div class="box-content">
         </div>
 
-        <div class="box-add" onclick="openModal()">
+        <div class="box-add" onclick="openCreateItem(${box.id})">
         <i class="fas fa-plus-circle"></i>
         Add Item
         </div>
@@ -67,6 +67,33 @@ function mountTheBoxesItems() {
       }
     });
   });
+}
+
+function openCreateItem(boxId) {
+  modalOverlay.querySelector(".modal-content").innerHTML =
+    formCreateItem(boxId);
+
+  console.log(boxId);
+
+  openModal();
+}
+
+function handleCreateItem(e) {
+  e.preventDefault();
+
+  const newItem = {
+    id: Math.random().toFixed(3) * 100,
+    title: e.target.title.value,
+    level: e.target.level.value,
+    content: e.target.content.value.trim(),
+    boxId: Number(e.target.boxId.value),
+    date: new Date().getDate(),
+  };
+
+  kabanItemsData = [...kabanItemsData, newItem];
+
+  init();
+  closeModal();
 }
 
 function init() {

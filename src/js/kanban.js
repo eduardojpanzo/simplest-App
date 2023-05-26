@@ -22,7 +22,7 @@ function mountTheBoxes() {
         <div class="box-header">
         <span>${box.title}</span>
 
-        <i class="fas fa-ellipsis-v"></i>
+        <button onclick="handleDeleteBox(${box.id})"><i class="fas fa-times"></i></button>
         </div>
 
         <div class="box-content">
@@ -50,23 +50,22 @@ function handleCreateBox(e) {
   e.preventDefault();
 
   const newBox = {
-    id: Math.random().toFixed(3) * 100,
+    id: Math.floor(Math.random() * 1000),
     title: e.target.title.value,
   };
 
   kabanBoxesData = [...kabanBoxesData, newBox];
-
   setKabanBox(kabanBoxesData);
   init();
   closeModal();
 }
 
 function handleDeleteBox(id) {
-  const data = kabanBoxesData.filter((box) => box.id !== id);
-  const itemData = kabanItemsData.filter((item) => item.boxId !== id);
+  kabanBoxesData = kabanBoxesData.filter((box) => box.id !== id);
+  kabanItemsData = kabanItemsData.filter((item) => item.boxId !== id);
 
-  setKabanBox(data);
-  setKabanItem(itemData);
+  setKabanBox(kabanBoxesData);
+  setKabanItem(kabanItemsData);
   init();
 }
 
@@ -132,9 +131,9 @@ function handleCreateItem(e) {
 }
 
 function handleDeleteKanbanItem(id) {
-  const data = kabanItemsData.filter((item) => item.id !== id);
+  kabanItemsData = kabanItemsData.filter((item) => item.id !== id);
 
-  setKabanItem(data);
+  setKabanItem(kabanItemsData);
   init();
 }
 

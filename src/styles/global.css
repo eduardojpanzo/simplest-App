@@ -101,10 +101,10 @@ textarea,
 select {
   background: transparent;
   border: 1px solid var(--bg);
-  font-size: large;
+  font-size: medium;
   margin-bottom: 0.65rem;
   border-radius: 0.5rem;
-  padding: 0.2rem;
+  padding: 0.3rem;
   outline: none;
   resize: none;
   color: var(--text-secondary);
@@ -137,6 +137,7 @@ select {
   flex-direction: column;
   align-items: center;
   background-color: var(--bg-trasparent);
+  z-index: 99;
 }
 
 .modal-overlay.open {

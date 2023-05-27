@@ -1,6 +1,16 @@
-const stickysNotesData = [
-  { id: 1, title: "Estudos", content: "Algumas coisas que devo estudae" },
-  { id: 2, title: "Pesquisas", content: "Algumas coisas que devo pesquisar" },
+let stickysNotesData = [
+  {
+    id: 1,
+    title: "Estudos",
+    color: "red",
+    content: "Algumas coisas que devo estudae",
+  },
+  {
+    id: 2,
+    title: "Pesquisas",
+    color: "green",
+    content: "Algumas coisas que devo pesquisar",
+  },
 ];
 
 const stickyBtnsData = [
@@ -16,7 +26,7 @@ const stickyBtnsData = [
 
 function StickyNoteHTML(sticky) {
   return `
-    <div class="sticky-item ${sticky.color} draggable="true">
+    <div class="sticky-item ${sticky.color}" draggable="true">
         <div class="sticky-header">
         <h3>${sticky.title}</h3>
         <button onclick="handleDeleteStickyNote(${

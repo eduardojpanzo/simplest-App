@@ -30,7 +30,21 @@ function handleOpenCreateSticky() {
 function handleCreateSticky(event) {
   event.preventDefault();
 
-  console.log(event.target);
+  const newSticky = {
+    id: Math.floor(Math.random() * 1000),
+    title: event.target.title.value,
+    color: event.target.color.value,
+    content: event.target.content.value,
+  };
+
+  stickysNotesData = [...stickysNotesData, newSticky];
+  // setStickyNote(stickysNotesData);
+  // init();
+  closeModal();
+}
+
+function setStickyNote(data) {
+  localStorage.setItem("stickysNotesData", JSON.stringify(data));
 }
 
 function handleUpdateStickyNote() {
@@ -39,4 +53,6 @@ function handleUpdateStickyNote() {
 
 function handleDeleteStickyNote() {
   console.log("Deletando----");
+
+  stickysNotesData = stickysNotesData.filter((box) => box.id !== id);
 }

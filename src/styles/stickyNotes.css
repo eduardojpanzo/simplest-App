@@ -9,8 +9,8 @@
 
   grid-template-areas:
     " header header "
-    "content content ";
-  grid-template-columns: 250px 1fr;
+    "aside content ";
+  grid-template-columns: 210px 1fr;
   grid-template-rows: 65px 1fr;
 }
 
@@ -39,20 +39,36 @@
 
 .aside {
   grid-area: aside;
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem 0.3rem;
+  align-items: stretch;
+  gap: 0.5rem;
+  background: var(--gray-100);
+}
+.aside .sticky-item {
+  width: 100%;
+  box-shadow: 0 0 0.5rem var(--gray-300);
+}
+.aside .sticky-body,
+.aside .sticky-footer {
   display: none;
 }
+
 .content {
   grid-area: content;
   padding: 0.5rem;
+  background: var(--red-50);
 }
 
 .sticky-item {
   width: max-content;
   max-width: 200px;
+  min-width: 150px;
   border: 1px solid var(--gray-300);
   background: var(--gray-200);
+  box-shadow: 0 0 0.5rem var(--gray-300);
 }
-
 .sticky-header {
   display: flex;
   align-items: center;
@@ -62,7 +78,21 @@
   font-size: small;
   cursor: grab;
 }
-
+.sticky-item.red .sticky-header {
+  background: var(--red-500);
+}
+.sticky-item.orange .sticky-header {
+  background: var(--orange-500);
+}
+.sticky-item.green .sticky-header {
+  background: var(--green-500);
+}
+.sticky-item.yellow .sticky-header {
+  background: var(--yellow-500);
+}
+.sticky-item.blue .sticky-header {
+  background: var(--blue-500);
+}
 .sticky-header button {
   cursor: pointer;
 }

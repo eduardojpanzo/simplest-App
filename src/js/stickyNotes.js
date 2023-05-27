@@ -1,5 +1,6 @@
 const modalOverlay = document.querySelector(".modal-overlay");
 const content = document.querySelector("main.content");
+const aside = document.querySelector("aside.aside");
 
 function openModal() {
   modalOverlay.classList.add("open");
@@ -14,9 +15,9 @@ function isModalOpen() {
 }
 
 function mountStickyNote() {
-  content.innerHTML = "";
+  aside.innerHTML = "";
   stickysNotesData.forEach((sticky) => {
-    content.innerHTML += StickyNoteHTML(sticky);
+    aside.innerHTML += StickyNoteHTML(sticky);
   });
 }
 

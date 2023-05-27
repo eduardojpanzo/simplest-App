@@ -16,7 +16,7 @@ const stickyBtnsData = [
 
 function StickyNoteHTML(sticky) {
   return `
-    <div class="sticky-item color:[yellow|blue|green|orange|red]" draggable="true">
+    <div class="sticky-item ${sticky.color} draggable="true">
         <div class="sticky-header">
         <h3>${sticky.title}</h3>
         <button onclick="handleDeleteStickyNote(${
@@ -42,6 +42,16 @@ function StickyNoteHTML(sticky) {
 const formCreateSticky = () => {
   return `
     <form class="kaban-form" onsubmit="handleCreateSticky(event)">
+        <div class="control-form">
+          <label for="color">Color</label>
+          <select class="color" id="color">
+            <option style="background: yellow" value="yellow">yellow</option>
+            <option style="background: blue" value="blue">blue</option>
+            <option style="background: green" value="green">green</option>
+            <option style="background: orange" value="orange">orange</option>
+            <option style="background: red" value="red">red</option>
+          </select>
+        </div>
         <div class="control-form">
             <label for="title">Title: </label><br/>
             <input type="text" name="title" id="title" />

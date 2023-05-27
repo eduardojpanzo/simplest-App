@@ -1,12 +1,12 @@
-let kabanItemsData = JSON.parse(localStorage.getItem("kabanItemsData"));
-let kabanBoxesData = JSON.parse(localStorage.getItem("kabanBoxesData"));
+let kabanItemsData = JSON.parse(localStorage.getItem("kabanItemsData")) || [];
+let kabanBoxesData = JSON.parse(localStorage.getItem("kabanBoxesData")) || [];
 
 const formCreateBox = () => {
   return `
   <form class="kaban-form" onsubmit="handleCreateBox(event)">
       <div class="control-form">
           <label for="title">Name or Title: </label><br/>
-          <input type="text" name="title" id="title" autofocus />
+          <input type="text" name="title" id="title" />
       </div>
   
       <button>Create</button>
@@ -19,7 +19,7 @@ const formCreateItem = (boxId) => {
       <input type="hidden" name="boxId" id="boxId" value="${boxId}"/>
       <div class="control-form">
         <label>Level</label><br/>
-        <select name="level" id="level" autofocus>
+        <select name="level" id="level">
           <option value="high">High</option>
           <option value="medium">Medium</option>
           <option value="low">Low</option>

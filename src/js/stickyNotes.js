@@ -18,6 +18,10 @@ function mountStickyNote() {
   aside.innerHTML = "";
   stickysNotesData.forEach((sticky) => {
     aside.innerHTML += StickyNoteHTML(sticky);
+
+    /*improve: verificar ou setar um data que possibilite
+              definir onde iremos montar o item
+    */
   });
 }
 
@@ -48,14 +52,15 @@ function setStickyNote(data) {
   localStorage.setItem("stickysNotesData", JSON.stringify(data));
 }
 
-function handleUpdateStickyNote() {
-  console.log("atualizando a cada alteração no texto----");
+function handleDeleteStickyNote(id) {
+  stickysNotesData = stickysNotesData.filter((item) => item.id !== id);
+
+  setStickyNote(stickysNotesData);
+  loadApp();
 }
 
-function handleDeleteStickyNote() {
-  console.log("Deletando----");
-
-  stickysNotesData = stickysNotesData.filter((box) => box.id !== id);
+function handleUpdateStickyNote() {
+  console.log("atualizando a cada alteração no texto----");
 }
 
 function loadApp() {

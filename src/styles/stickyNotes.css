@@ -50,6 +50,9 @@
   width: 100%;
   box-shadow: 0 0 0.5rem var(--gray-300);
 }
+.aside .sticky-header {
+  padding: 0.5rem;
+}
 .aside .sticky-body,
 .aside .sticky-footer {
   display: none;

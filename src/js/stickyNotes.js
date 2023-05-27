@@ -63,6 +63,10 @@ function handleUpdateStickyNote() {
   console.log("atualizando a cada alteração no texto----");
 }
 
+function handleSetCommand(element) {
+  console.log(element);
+}
+
 function loadApp() {
   mountStickyNote();
 }

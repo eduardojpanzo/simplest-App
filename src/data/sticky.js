@@ -2,14 +2,14 @@ let stickysNotesData =
   JSON.parse(localStorage.getItem("stickysNotesData")) || [];
 
 const stickyBtnsData = [
-  { classIcon: "fas fa-bold", comand: "" },
-  { classIcon: "fas fa-italic", comand: "" },
-  { classIcon: "fas fa-underline", comand: "" },
-  { classIcon: "fas fa-list-ul", comand: "" },
-  { classIcon: "fas fa-align-left", comand: "" },
-  { classIcon: "fas fa-align-center", comand: "" },
-  { classIcon: "fas fa-align-right", comand: "" },
-  { classIcon: "fas fa-align-justify", comand: "" },
+  { classIcon: "fas fa-bold", command: "bold" },
+  { classIcon: "fas fa-italic", command: "italic" },
+  { classIcon: "fas fa-underline", command: "underline" },
+  { classIcon: "fas fa-list-ul", command: "insertUnOrderedList" },
+  { classIcon: "fas fa-align-left", command: "justifyLeft" },
+  { classIcon: "fas fa-align-center", command: "justifyCenter" },
+  { classIcon: "fas fa-align-right", command: "justifyRight" },
+  { classIcon: "fas fa-align-justify", command: "justifyFull" },
 ];
 
 function StickyNoteHTML(sticky) {
@@ -27,7 +27,7 @@ function StickyNoteHTML(sticky) {
         ${stickyBtnsData
           .map(
             (btn) => `
-            <button class="sticky-btn">
+            <button class="sticky-btn" data-command="${btn.command}" onclick="handleSetCommand(this)>
                 <i class="${btn.classIcon}"></i>
             </button>
         `

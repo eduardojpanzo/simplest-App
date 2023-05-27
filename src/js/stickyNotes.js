@@ -38,8 +38,9 @@ function handleCreateSticky(event) {
   };
 
   stickysNotesData = [...stickysNotesData, newSticky];
-  // setStickyNote(stickysNotesData);
-  // init();
+  setStickyNote(stickysNotesData);
+
+  loadApp();
   closeModal();
 }
 
@@ -56,3 +57,9 @@ function handleDeleteStickyNote() {
 
   stickysNotesData = stickysNotesData.filter((box) => box.id !== id);
 }
+
+function loadApp() {
+  mountStickyNote();
+}
+
+loadApp();

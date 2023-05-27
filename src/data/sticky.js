@@ -1,17 +1,5 @@
-let stickysNotesData = [
-  {
-    id: 1,
-    title: "Estudos",
-    color: "red",
-    content: "Algumas coisas que devo estudae",
-  },
-  {
-    id: 2,
-    title: "Pesquisas",
-    color: "green",
-    content: "Algumas coisas que devo pesquisar",
-  },
-];
+let stickysNotesData =
+  JSON.parse(localStorage.getItem("stickysNotesData")) || [];
 
 const stickyBtnsData = [
   { classIcon: "fas fa-bold", comand: "" },
@@ -67,7 +55,7 @@ const formCreateSticky = () => {
             <input type="text" name="title" id="title" />
         </div>
         <div class="control-form">
-            <label for="content">description</label><br/>
+            <label for="content">Initial Content</label><br/>
             <textarea name="content" id="content"></textarea>
         </div>
     

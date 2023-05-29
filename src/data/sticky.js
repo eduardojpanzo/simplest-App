@@ -14,7 +14,9 @@ const stickyBtnsData = [
 
 function StickyNoteHTML(sticky) {
   return `
-    <div class="sticky-item ${sticky.color}" draggable="true">
+    <div class="sticky-item ${
+      sticky.color
+    }" draggable="true" ondragstart="handleDragStart(event)">
         <div class="sticky-header">
         <h3>${sticky.title}</h3>
         <button onclick="handleDeleteStickyNote(${

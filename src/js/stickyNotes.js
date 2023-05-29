@@ -1,6 +1,10 @@
+let currentSticky;
 const modalOverlay = document.querySelector(".modal-overlay");
 const content = document.querySelector("main.content");
 const aside = document.querySelector("aside.aside");
+
+content.addEventListener("dragover", handleDragOver, false);
+content.addEventListener("drop", handleDrop, false);
 
 function openModal() {
   modalOverlay.classList.add("open");
@@ -19,8 +23,8 @@ function mountStickyNote() {
   stickysNotesData.forEach((sticky) => {
     aside.innerHTML += StickyNoteHTML(sticky);
 
-    /*improve: verificar ou setar um data que possibilite
-              definir onde iremos montar o item
+    /*improve: verificar ou setar um data(dados) que possibilite
+              definir onde iremos montar o item desde o inicio
     */
   });
 }
@@ -65,6 +69,39 @@ function handleUpdateStickyNote() {
 
 function handleSetCommand(element) {
   console.log(element);
+}
+
+// Drag and drop
+
+function handleDragStart(event) {
+  const stickyStyle = window.getComputedStyle(event.target, null);
+  currentSticky = event.target;
+
+  event.dataTransfer.setData(
+    "text/plain",
+    parseInt(stickyStyle.getPropertyValue("left"), 10) -
+      event.clientX +
+      "," +
+      (parseInt(stickyStyle.getPropertyValue("top"), 10) - event.clientY)
+  );
+}
+
+function handleDragOver(event) {
+  event.preventDefault();
+  return false;
+}
+
+function handleDrop(event) {
+  const offset = event.dataTransfer.getData("text/plain").split(",");
+  const sticky = currentSticky;
+
+  console.log(currentSticky);
+
+  sticky.style.left = event.clientX + parseInt(offset[0], 10) + "px";
+  sticky.style.top = event.clientY + parseInt(offset[1], 10) + "px";
+
+  event.preventDefault();
+  return false;
 }
 
 function loadApp() {

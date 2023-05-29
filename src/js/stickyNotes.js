@@ -67,41 +67,26 @@ function handleUpdateStickyNote() {
   console.log("atualizando a cada alteração no texto----");
 }
 
-function handleSetCommand(element) {
-  console.log(element);
+//Execution Command
+function handleSetCommand(event) {
+  console.log(event);
 }
 
 // Drag and drop
 
 function handleDragStart(event) {
-  const stickyStyle = window.getComputedStyle(event.target, null);
   currentSticky = event.target;
-
-  event.dataTransfer.setData(
-    "text/plain",
-    parseInt(stickyStyle.getPropertyValue("left"), 10) -
-      event.clientX +
-      "," +
-      (parseInt(stickyStyle.getPropertyValue("top"), 10) - event.clientY)
-  );
 }
 
 function handleDragOver(event) {
   event.preventDefault();
-  return false;
 }
 
 function handleDrop(event) {
-  const offset = event.dataTransfer.getData("text/plain").split(",");
-  const sticky = currentSticky;
-
-  console.log(currentSticky);
-
-  sticky.style.left = event.clientX + parseInt(offset[0], 10) + "px";
-  sticky.style.top = event.clientY + parseInt(offset[1], 10) + "px";
-
   event.preventDefault();
-  return false;
+
+  //verificar onde deve ser largado (drop) e largar no lugar expecifico
+  event.target.appendChild(currentSticky);
 }
 
 function loadApp() {

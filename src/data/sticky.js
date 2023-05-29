@@ -14,9 +14,9 @@ const stickyBtnsData = [
 
 function StickyNoteHTML(sticky) {
   return `
-    <div class="sticky-item ${
-      sticky.color
-    }" draggable="true" ondragstart="handleDragStart(event)">
+    <div id="${sticky.id}" class="sticky-item ${
+    sticky.color
+  }" draggable="true" ondragstart="handleDragStart(event)">
         <div class="sticky-header">
         <h3>${sticky.title}</h3>
         <button onclick="handleDeleteStickyNote(${
@@ -29,7 +29,7 @@ function StickyNoteHTML(sticky) {
         ${stickyBtnsData
           .map(
             (btn) => `
-            <button class="sticky-btn" data-command="${btn.command}" onclick="handleSetCommand(this)>
+            <button class="sticky-btn" data-command="${btn.command}" onclick="handleSetCommand(event)">
                 <i class="${btn.classIcon}"></i>
             </button>
         `

@@ -65,7 +65,6 @@
 }
 
 .sticky-item {
-  position: relative;
   width: max-content;
   max-width: 200px;
   min-width: 150px;

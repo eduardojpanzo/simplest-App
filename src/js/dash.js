@@ -42,7 +42,7 @@ function setMenuItems() {
   document.querySelector(".menu-items").innerHTML = "";
   sideBarMenuItems.map((item) => {
     document.querySelector(".menu-items").innerHTML += `
-        <li class="item">
+        <li class="item" onclick="${item.goTo}">
             <i class="${item.iconClass}"></i>
             <span>${item.value}</span>
         </li>
@@ -50,16 +50,16 @@ function setMenuItems() {
   });
 }
 
-function MountSideBar() {
+function mountSideBar() {
   document.querySelector(".user-content").innerHTML = userContentInner;
   document.querySelector(".switch-theme").innerHTML = toggleThemeInner;
   setMenuItems();
 }
 
-function MountTableBody() {
+function mountTableBody(bodydata) {
   document.querySelector(".table tbody").innerHTML = "";
 
-  tableBodyData.map((item) => {
+  bodydata.map((item) => {
     document.querySelector(".table tbody").innerHTML += `
         <tr  data-key="${item.key}">
             <td>${item.name}</td>
@@ -71,9 +71,21 @@ function MountTableBody() {
   });
 }
 
+function handleMountBodyData(number) {
+  const bodydata = {
+    1: tableBodyDataRecent,
+    2: tableBodyDataImages,
+    3: tableBodyDataVideo,
+    4: tableBodyDataAudio,
+    5: tableBodyDataOthers,
+  };
+
+  mountTableBody(bodydata[number]);
+}
+
 function initialDash() {
-  MountSideBar();
-  MountTableBody();
+  mountSideBar();
+  mountTableBody(tableBodyDataRecent);
 }
 
 initialDash();

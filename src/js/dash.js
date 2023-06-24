@@ -80,11 +80,23 @@ function handleMountBodyData(number) {
     5: tableBodyDataOthers,
   };
 
+  selectMenuItem(number);
   mountTableBody(bodydata[number]);
+}
+
+function selectMenuItem(number) {
+  const items = document.querySelectorAll(".menu-items .item");
+  items.forEach((item, i) => {
+    item.classList.remove("active");
+    if (i === number - 1) {
+      item.classList.add("active");
+    }
+  });
 }
 
 function initialDash() {
   mountSideBar();
+  selectMenuItem(1);
   mountTableBody(tableBodyDataRecent);
 }
 

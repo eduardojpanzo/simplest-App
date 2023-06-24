@@ -93,6 +93,7 @@ body {
 }
 
 .menu-items .item:hover,
+.menu-items .item.active,
 .switch-theme:hover {
   background: var(--bg-primary);
   border: 1px solid var(--gray-300);

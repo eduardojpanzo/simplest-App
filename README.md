@@ -2,7 +2,7 @@
 
 -Diversas mini aplicações ou ações que são possivel fazer com javaScript
 
-Demo:  https://eduardopanzo.github.io/simplest-App/
+[Demo:](https://eduardojpanzo.github.io/simplest-App/)
 
 ## generatePassword
 

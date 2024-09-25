@@ -25,6 +25,11 @@
   border: 4px solid #1a1a1a;
   overflow: hidden;
 }
+.preview {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+}
 .preview-container.recording {
   border: 4px solid #b61616;
 }
@@ -43,6 +48,9 @@
 .btn-capture {
   color: var(--white);
   background: var(--blue-600);
+}
+.btn-stop-capturing {
+  color: var(--red-500);
 }
 
 .btn-save {

@@ -4,13 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Screen Redording</title>
+    <link rel="stylesheet" href="./../styles/screenRecording.css" />
   </head>
   <body>
-    <main>
+    <main class="main">
       <div class="preview-container">
         <video autoplay id="preview"></video>
       </div>
-      <button id="start">Start Capture</button>
+      <div class="action">
+        <button class="btn btn-capture">Capture</button>
+        <button class="btn btn-save">Download</button>
+      </div>
     </main>
   </body>
 </html>

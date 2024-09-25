@@ -1,0 +1,55 @@
+@import url("./global.css");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.main {
+  width: 100dvw;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.preview-container {
+  max-width: 1280px;
+  height: 500px;
+  margin: 0 auto;
+  aspect-ratio: 16/9;
+  border-radius: 8px;
+  border: 4px solid #1a1a1a;
+  overflow: hidden;
+}
+.preview-container.recording {
+  border: 4px solid #b61616;
+}
+
+.action {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  border-radius: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.btn-capture {
+  color: var(--white);
+  background: var(--blue-600);
+}
+
+.btn-save {
+  color: var(--white);
+  background: var(--green-500);
+}
+
+.btn-block {
+  cursor: not-allowed;
+}
